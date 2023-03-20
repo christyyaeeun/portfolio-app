@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Navbar */
+a:hover {
+  color: #8fa6c9;
+  transition: all 0.3s;
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+/* Home */
+.homepage {
+  margin-top: 1em;
+}
+
+section {
+  box-sizing: border-box;
+  width: 100%;
+  /* height: 101vh; */
+  display: flex;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  overflow: hidden;
+  /* padding: 50px; */
+  background: #f5f5f7;
+  padding-top: 5em;
+}
+
+section:nth-child(2) {
+  /* background: #ece7e1; */
+  background: #f5f5f7;
+  justify-content: center !important;
+}
+
+section:nth-child(3) {
+  /* background: #f9f9f9; */
+  /* background: #f5f5f5; */
+  background-color: white;
+}
+
+section:nth-child(4) {
+  background: #acc6e4;
+}
+
+section span {
+  display: block;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+#intro-section {
+  height: 100vh;
+  /* padding: 50px; */
+  margin-top: 5em;
+  width: 100vw;
+}
+
+.heading-title {
+  font-weight: 700;
+  font-family: 'Inter-Bold', 'Inter', sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: -4px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+}
+
+#menu-icon {
+  background: White;
+}
+
+.portfolio-wrapper {
+  width: 100vw;
+  padding-bottom: 5em;
+  background-color: white;
+  padding-top: 3.5em;
+  min-height: 100vh;
+}
+
+#project-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 20px;
+  margin-top: 1em;
+}
+
+#project-title:hover {
+  color: #8fa6c9;
+}
+
+#project-topic {
+  color: #505050;
+  font-size: 15px;
+}
+
+#project-description {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+div.css-6iw18y > div:nth-child(1) > div:hover {
+  color: #8fa6c9;
+}
+div.css-6iw18y > div:nth-child(2) > div:hover {
+    color: #8fa6c9;
+}
+div.css-6iw18y > div:nth-child(3) > div:hover {
+    color: #8fa6c9;
+}
+
+
+/* About */
+
+.about-container {
+  height: 100vh;
+  width: 100vw;
+  padding: 10em 0 0 0;
+  background: #f5f5f7;
+  margin-top: 3.5em;
+}
+
+#about-text {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: -0.5px;
+}
+
+/* Text Animation */
+.animated-text {
+  font-size: 40px;
+  /* text-transform: uppercase; */
+  /* color: white; */
+  font-weight: bold;
+  /* background: linear-gradient(to right, #76baba 0%, #330867 100%); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-weight: 700;
+  font-family: 'Inter-Bold', 'Inter', sans-serif;
+  color: #8fa6c9;
+  letter-spacing: -1px;
+}
+
+
+
+@media (max-width: 480px) {
+  .hero-wrap {
+    flex-direction: column;
+  }
+
+  .animated-text {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .animated-text {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .animated-text {
+    font-size: 80px;
+  }
+  .css-onkibi {
+  width:2em !important;
+  height: 2em !important;;
+}
+}
+
+@media (max-width: 550px) {
+  .hero-wrap {
+    flex-direction: column;
+  }
+
+  .grid-2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 481px) {
+  #web-img {
+    display: none;
+  }
+
+  .css-r6z5ec {
+    transform: translate3d(-0.4rem, 108px, 0px) !important;
+  }
+}
+
+#form-lable {
+  font-size: large;
+}
+
+@media (min-width: 480px) {
+  #mobile-img {
+    display: none;
+  }
+}
+
+@media (min-width: 551px) {
+  .grid img {
+    width: 90%;
+  }
+
+  .grid-2 {
+    width: 40%;
+    top: 15%;
+    position: relative;
+    left: -3%;
+  }
+}
+
+.btn-animation {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+  margin-top: 1em;
+}
+
+.css-o20sne:hover, .css-o20sne[data-hover] {
+    background: none!important;
+    color:#8fa6c9;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
