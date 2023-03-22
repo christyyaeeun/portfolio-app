@@ -26,7 +26,7 @@ const Intro = () => {
                         >
                         <Box w="50%" id="sparkle-wrapper">
                             <Box id="sparkle-png">
-                                <img src={ sparkle } />
+                                    <img style={ { filter:"invert(.7)"}} src={ sparkle } />
                             </Box>
                         </Box>
                         </motion.div>
