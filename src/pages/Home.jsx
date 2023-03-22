@@ -1,14 +1,11 @@
-import React from 'react'
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-import About from './About';
-import Portfolio from './Portfolio';
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import Contact from './Contact';
 import Intro from '../components/Intro';
-import { Flex, Box, IconButton, Container } from '@chakra-ui/react'
-import { ArrowDownIcon } from '@chakra-ui/icons'
+import { Flex, Box } from '@chakra-ui/react'
 import PortfolioCards from '../components/PortfolioCards';
-import { motion } from 'framer-motion'
+import { SlArrowUpCircle } from 'react-icons/sl'
+import { MdKeyboardArrowDown} from 'react-icons/md'
 
 function Section({ children }) {
     const ref = useRef(null);
@@ -30,17 +27,47 @@ function Section({ children }) {
     );
 }
 
+
+
+
 function Home() {
+    const [ isVisible, setIsVisible ] = useState(true);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
+
+    useEffect(() => {
+        setIsVisible(false);
+        window.addEventListener("scroll", listenToScroll);
+        return () =>
+            window.removeEventListener("scroll", listenToScroll);
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     const elementRef = useRef(null);
 
     const handleClick = () => {
         elementRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const listenToScroll = () => {
+        let heightSetToVisible = 800;
+        const winScroll = document.body.scrollTop ||
+            document.documentElement.scrollTop;
+
+        if (winScroll > heightSetToVisible) {
+            isVisible &&
+                setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
     return (
         <>
-            <div className="about-container">
-                <About />
+            <div className="intro-container">
+                <Intro />
                 <Flex pt="3" justifyContent="center">
                     <motion.div
                         transition={ { duration: 1, delay: 2.5 } }
@@ -49,21 +76,11 @@ function Home() {
                         exit={ { opacity: 0 } }
                     >
                         <Box className="btn-animation">
-                            <IconButton variant="ghost" bg="transparent" icon={ <ArrowDownIcon /> } onClick={ handleClick } />
+                            <button id="down-arrow" onClick={ handleClick }><MdKeyboardArrowDown /></button>
                         </Box>
                     </motion.div>
                 </Flex>
             </div>
-            {/* <Section>
-                <div id="intro-section">
-                    <Intro />
-                    <Flex pt="3" justifyContent="center">
-                        <Box className="btn-animation">
-                            <IconButton variant="ghost" bg="transparent" icon={ <ArrowDownIcon /> } onClick={ handleClick } />
-                        </Box>
-                    </Flex>
-                </div>
-            </Section> */}
 
             <Section>
                 <div ref={ elementRef }>
@@ -72,6 +89,17 @@ function Home() {
             </Section>
 
             <Section><Contact /></Section>
+            {
+                isVisible
+                &&
+                <button id="scrollt-btn"
+                    onClick={ () => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                    } }>
+                    <SlArrowUpCircle />
+                </button>
+
+            }
         </>
     )
 }

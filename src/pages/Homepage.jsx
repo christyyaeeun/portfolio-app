@@ -1,11 +1,9 @@
 import { ArrowDownIcon } from '@chakra-ui/icons'
-import { Flex, Box, button, Container, Text, Heading, Image, IconButton } from '@chakra-ui/react'
+import { Flex, Box, Container, Text, Heading, IconButton } from '@chakra-ui/react'
 import React, { useRef } from 'react'
 import { useInView, motion } from "framer-motion";
-import { Link } from 'react-router-dom'
-import About from './About'
 import Portfolio from './Portfolio'
-import Intro from '../components/Intro';
+
 
 function Section({ children }) {
     const pageRef = useRef(null)

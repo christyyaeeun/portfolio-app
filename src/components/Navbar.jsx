@@ -1,13 +1,11 @@
-import * as React from "react";
+import React from 'react'
 import { NavLink } from "react-router-dom";
 import {
     Box,
     Flex,
-    Text,
     IconButton,
     Stack,
     useColorModeValue,
-    useBreakpointValue,
     useDisclosure,
     Drawer,
     DrawerBody,
@@ -16,14 +14,12 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-    Image,
 } from '@chakra-ui/react';
 import {
     HamburgerIcon,
     CloseIcon,
 } from '@chakra-ui/icons';
 import { createIcon } from '@chakra-ui/icons'
-
 
 
 export const LogoIcon = createIcon({
@@ -36,6 +32,10 @@ export const LogoIcon = createIcon({
 export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+
+    function handleSelect() {
+        onClose();
+    }
 
     return (
         <nav>
@@ -69,6 +69,7 @@ export default function Navbar() {
                             display={ { base: 'flex', md: 'none', lg:'none' } }>
 
                             <IconButton ref={ btnRef }
+                                isOpen={ isOpen }
                                 onClick={ onOpen }
                                 icon={
                                     isOpen ? <CloseIcon w={ 3 } h={ 3 } /> : <HamburgerIcon w={ 5 } h={ 5 } />
@@ -153,22 +154,22 @@ export default function Navbar() {
                                         textDecoration: 'none',
                                     } }>
                                     <Box mt="0.1rem">
-                                        <NavLink to="/home">
+                                        <NavLink onClick={handleSelect} to="/home" >
                                             Home
                                         </NavLink>
                                     </Box>
                                     <Box mt="0.5rem">
-                                        <NavLink to="/about">
+                                        <NavLink to="/about" onClick={ handleSelect }>
                                             About
                                         </NavLink>
                                     </Box>
                                     <Box mt="0.5rem">
-                                        <NavLink to="/portfolio">
+                                        <NavLink to="/portfolio" onClick={ handleSelect }>
                                             Portfolio
                                         </NavLink>
                                     </Box>
                                     <Box mt="0.5rem">
-                                        <NavLink to="/contact">
+                                        <NavLink to="/contact" onClick={ handleSelect }>
                                             Contact
                                         </NavLink>
                                     </Box>

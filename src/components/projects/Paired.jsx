@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Heading, Box, Container, useColorModeValue, Image } from '@chakra-ui/react'
+import { Text, Heading, Box, Container, Image } from '@chakra-ui/react'
 import './olt.css'
 import BackButton from '../BackButton'
 

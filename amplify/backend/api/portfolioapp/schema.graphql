@@ -1,0 +1,7 @@
+type ContactForm @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  number: AWSPhone!
+  email: AWSEmail!
+  message: String!
+}

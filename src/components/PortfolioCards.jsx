@@ -1,5 +1,4 @@
-import { SimpleGrid, Box, Button, Text, Flex, Image, Container, Heading, } from '@chakra-ui/react'
-import React, { useRef } from 'react'
+import { SimpleGrid, Box, Text, Flex, Image, Container, Heading, } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
 

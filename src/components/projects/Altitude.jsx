@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Center, Stack, Flex, Heading, Badge, useColorModeValue, Container, Box } from '@chakra-ui/react'
+import { Text, Container, Box } from '@chakra-ui/react'
 import BackButton from '../BackButton'
 
 function Altitude() {
