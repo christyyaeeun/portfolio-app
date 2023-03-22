@@ -1,7 +1,6 @@
 import { Text, Box, Container } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import TextAnimation from '../components/TextAnimation'
-import sparkle from '../img/sparkle.GIF';
 
 const Intro = () => {
 
@@ -26,7 +25,7 @@ const Intro = () => {
                         >
                         <Box w="50%" id="sparkle-wrapper">
                             <Box id="sparkle-png">
-                                    <img style={ { filter:"invert(.7)"}} src={ sparkle } />
+                                    <img style={ { filter: "invert(.7)" } } src={'https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/sparkle.GIF?alt=media&token=96ecb3c6-dac9-4cf5-906f-d65313873f91'} />
                             </Box>
                         </Box>
                         </motion.div>

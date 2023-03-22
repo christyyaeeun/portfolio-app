@@ -55,7 +55,7 @@ export default function Navbar() {
                         direction={ 'row' }
                         spacing={ 6 }>
                         <Box px="2">
-                            <NavLink to="/home">
+                            <NavLink id="c-icon" to="/home">
                                 <LogoIcon w={ { base: "2em", lg: "2.2em" } } h={ { base: "2em", lg: "2.2em" } } />
                             </NavLink>
                         </Box>
