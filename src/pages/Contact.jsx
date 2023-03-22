@@ -2,6 +2,8 @@ import React from 'react'
 import {
     Container,
     Heading,
+    useColorModeValue,
+    Box,
 } from '@chakra-ui/react';
 import ContactFormCreateForm from '../ui-components/ContactFormCreateForm'
 import { motion } from 'framer-motion';
@@ -9,7 +11,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     return (
         <>
-            <div id="contact">
+            <Box id="contact" bg={useColorModeValue('white','gray.800')}>
                 <motion.div
                     transition={ { duration: 1, delay: .2 } }
                     initial={ { opacity: 0, y: -20 } }
@@ -21,7 +23,7 @@ const Contact = () => {
                         <ContactFormCreateForm />
                     </Container>
                 </motion.div>
-            </div>
+            </Box>
         </>
        
     )

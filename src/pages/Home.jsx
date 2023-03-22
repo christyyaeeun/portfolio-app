@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Contact from './Contact';
 import Intro from '../components/Intro';
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Box, useColorModeValue, Tooltip } from '@chakra-ui/react'
 import PortfolioCards from '../components/PortfolioCards';
 import { SlArrowUpCircle } from 'react-icons/sl'
 import { MdKeyboardArrowDown} from 'react-icons/md'
@@ -66,7 +66,7 @@ function Home() {
 
     return (
         <>
-            <div className="intro-container">
+            <Box className="intro-container" bg={useColorModeValue('#f5f5f6', 'gray.800')}>
                 <Intro />
                 <Flex pt="3" justifyContent="center">
                     <motion.div
@@ -75,12 +75,14 @@ function Home() {
                         animate={ { opacity: 1 } }
                         exit={ { opacity: 0 } }
                     >
-                        <Box className="btn-animation">
+                        <Tooltip label="click me" aria-label="A tooltip" bg="#8ea6c99c">
+                        <Box className="btn-animation" color={ useColorModeValue('#75635b', 'white') }>
                             <button id="down-arrow" onClick={ handleClick }><MdKeyboardArrowDown /></button>
                         </Box>
+                        </Tooltip>
                     </motion.div>
                 </Flex>
-            </div>
+            </Box>
 
             <Section>
                 <div ref={ elementRef }>
@@ -92,11 +94,11 @@ function Home() {
             {
                 isVisible
                 &&
-                <button id="scrollt-btn"
+                <button id="scrollt-btn" color="#75635b" _dark={ { color: "white" } }
                     onClick={ () => {
                         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                     } }>
-                    <SlArrowUpCircle />
+                        <SlArrowUpCircle />
                 </button>
 
             }

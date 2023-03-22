@@ -1,314 +1,300 @@
 .container {
-    width: 100% !important;
-    display: grid;
-    grid-template-columns: 1fr 1.7fr 0.3fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . ."
-        "bg problem-text ."
-        ". . .";
+  width: 100% !important;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 0.3fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'bg problem-text .'
+    '. . .';
 }
 
 .problem-text {
-    grid-area: problem-text;
+  grid-area: problem-text;
 }
 
 .bg {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.6fr 1.8fr 0.6fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . ."
-        "problem-title problem-title problem-title"
-        ". . .";
-    grid-area: bg;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 1.8fr 0.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'problem-title problem-title problem-title'
+    '. . .';
+  grid-area: bg;
 }
 
 .problem-title {
-    grid-area: problem-title;
-    justify-content: center;
+  grid-area: problem-title;
+  justify-content: center;
 }
 
-
-
-
 .container1 {
-    display: grid;
-    grid-template-columns: 1fr 1.7fr 0.3fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . ."
-        "bg1 problemtext ."
-        ". . .";
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 0.3fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'bg1 problemtext .'
+    '. . .';
 }
 
 .problemtext {
-    grid-area: problemtext;
+  grid-area: problemtext;
 }
 
 .bg1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 1.8fr 0.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'problemtitle problemtitle problemtitle'
+    '. . .';
+  grid-area: bg1;
+}
+
+.problemtitle {
+  grid-area: problemtitle;
+  display: flex;
+}
+
+.mobile-title {
+  grid-area: mobile-title;
+  display: none;
+}
+
+.container-vision {
+  display: grid;
+  grid-template-columns: 0.1fr 2.4fr 0.5fr 1fr;
+  grid-template-rows: 0.8fr 3.1fr 0.5fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. mobile-vision-box mobile-vision-box mobile-vision-box'
+    '. vision-text vision-title-box vision-title-box'
+    '. . . .'
+    '. . . .';
+}
+
+.vision-title-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'vision-title vision-title vision-title'
+    '. . .';
+  grid-area: vision-title-box;
+}
+
+.vision-title {
+  grid-area: vision-title;
+}
+
+.vision-text {
+  grid-area: vision-text;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.mobile-vision-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    '. . . .'
+    '. mobile-vision-title mobile-vision-title .'
+    '. mobile-vision-title mobile-vision-title .'
+    '. mobile-vision-title mobile-vision-title .';
+  grid-area: mobile-vision-box;
+}
+
+.mobile-vision-title {
+  display: none;
+  grid-area: mobile-vision-title;
+}
+
+.container4 {
+  display: grid;
+  grid-template-columns: 0.2fr 1.4fr 1.2fr 1.2fr;
+  grid-template-rows: 0.7fr 1.3fr 1.3fr 0.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . . .'
+    '. img1 img1 cap1'
+    '. img1 img1 cap1'
+    '. . . .';
+}
+
+.img1 {
+  grid-area: img1;
+}
+
+.cap1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . . .'
+    '. . . .'
+    'c4txt1 c4txt1 c4txt1 c4txt1'
+    'c4txt1 c4txt1 c4txt1 c4txt1'
+    'c4txt1 c4txt1 c4txt1 c4txt1';
+  grid-area: cap1;
+}
+
+.c4txt1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.6fr 0.6fr 1.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. . .'
+    'text text text'
+    'text text text'
+    '. . .';
+  grid-area: c4txt1;
+}
+
+.text {
+  grid-area: text;
+}
+
+.container-grid {
+  height: 800px;
+  width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 0.1fr 1.5fr;
+  grid-template-rows: 1.5fr 0.1fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.l1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.r1 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.l2 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.r2 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.vertical {
+  grid-area: 1 / 2 / 4 / 3;
+}
+
+.horizontal {
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+@media (max-width: 576px) {
+  .container1 {
+    display: grid;
+    grid-template-columns: 0.3fr 2.4fr 0.3fr;
+    grid-template-rows: 0.3fr 2.2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'mobile-title mobile-title mobile-title'
+      'bg1 problemtext .'
+      '. . .';
+  }
+
+  .problemtext {
+    grid-area: problemtext;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .bg1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.6fr 1.8fr 0.6fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        ". . ."
-        "problemtitle problemtitle problemtitle"
-        ". . .";
+      '. . .'
+      'problemtitle problemtitle problemtitle'
+      '. . .';
     grid-area: bg1;
-}
+  }
 
-.problemtitle {
+  .problemtitle {
     grid-area: problemtitle;
-    display: flex;
-}
-
-.mobile-title {
-    grid-area: mobile-title;
     display: none;
-}
+  }
 
+  .mobile-title {
+    grid-area: mobile-title;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2.3em;
+  }
 
-
-.container-vision {
-    display: grid;
-    grid-template-columns: 0.1fr 2.4fr 0.5fr 1fr;
-    grid-template-rows: 0.8fr 3.1fr 0.5fr 0.3fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". mobile-vision-box mobile-vision-box mobile-vision-box"
-        ". vision-text vision-title-box vision-title-box"
-        ". . . ."
-        ". . . .";
-}
-
-.vision-title-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . ."
-        "vision-title vision-title vision-title"
-        ". . .";
-    grid-area: vision-title-box;
-}
-
-.vision-title {
-    grid-area: vision-title;
-}
-
-.vision-text {
-    grid-area: vision-text;
-    margin-left: 2em;
-    margin-top: 1em;
-}
-
-.mobile-vision-box {
+  .mobile-vision-box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
+    grid-auto-flow: row;
     grid-template-areas:
-        ". . . ."
-        ". mobile-vision-title mobile-vision-title ."
-        ". mobile-vision-title mobile-vision-title ."
-        ". mobile-vision-title mobile-vision-title .";
+      '. . . .'
+      '. mobile-vision-title mobile-vision-title .'
+      '. mobile-vision-title mobile-vision-title .'
+      '. mobile-vision-title mobile-vision-title .';
     grid-area: mobile-vision-box;
-}
+  }
 
-.mobile-vision-title {
-    display: none;
+  .mobile-vision-title {
     grid-area: mobile-vision-title;
-}
+    display: flex;
+    justify-content: center;
+  }
 
-.container4 {
+  .vision-title-box {
+    display: none;
+  }
+
+  .vision-title {
+    display: none;
+    grid-area: vision-title;
+  }
+
+  .container-vision {
     display: grid;
-    grid-template-columns: 0.2fr 1.4fr 1.2fr 1.2fr;
-    grid-template-rows: 0.7fr 1.3fr 1.3fr 0.7fr;
+    grid-template-columns: 0.1fr 10fr 0.1fr 0.6fr;
+    grid-template-rows: 0.8fr 3.1fr 0.5fr 0.3fr;
     gap: 0px 0px;
-    grid-auto-flow: row;
     grid-template-areas:
-        ". . . ."
-        ". img1 img1 cap1"
-        ". img1 img1 cap1"
-        ". . . .";
-}
-
-.img1 {
-    grid-area: img1;
-}
-
-.cap1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 1.5fr 1fr 0.5fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . . ."
-        ". . . ."
-        "c4txt1 c4txt1 c4txt1 c4txt1"
-        "c4txt1 c4txt1 c4txt1 c4txt1"
-        "c4txt1 c4txt1 c4txt1 c4txt1";
-    grid-area: cap1;
-}
-
-.c4txt1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 1.6fr 0.6fr 1.4fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . ."
-        "text text text"
-        "text text text"
-        ". . .";
-    grid-area: c4txt1;
-}
-
-.text {
-    grid-area: text;
-}
-
-
-.container-grid {
-    height: 800px;
-    width: 600px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 0.1fr 1.5fr;
-    grid-template-rows: 1.5fr 0.1fr 1.5fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-}
-
-.l1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.r1 {
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-.l2 {
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-.r2 {
-    grid-area: 3 / 3 / 4 / 4;
-}
-
-.vertical {
-    grid-area: 1 / 2 / 4 / 3;
-}
-
-.horizontal {
-    grid-area: 2 / 1 / 3 / 4;
-}
-
-
-
-
-
-
-@media (max-width: 576px) {
-    .container1 {
-        display: grid;
-        grid-template-columns: 0.3fr 2.4fr 0.3fr;
-        grid-template-rows: 0.3fr 2.2fr 0.5fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            "mobile-title mobile-title mobile-title"
-            "bg1 problemtext ."
-            ". . .";
-    }
-
-    .problemtext {
-        grid-area: problemtext;
-        display: flex;
-        justify-content: center;
-    }
-
-    .bg1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.6fr 1.8fr 0.6fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            ". . ."
-            "problemtitle problemtitle problemtitle"
-            ". . .";
-        grid-area: bg1;
-    }
-
-    .problemtitle {
-        grid-area: problemtitle;
-        display: none;
-    }
-
-    .mobile-title {
-        grid-area: mobile-title;
-        display: flex;
-        padding-left: 2em;
-    }
-
-
-    .mobile-vision-box {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            ". . . ."
-            ". mobile-vision-title mobile-vision-title ."
-            ". mobile-vision-title mobile-vision-title ."
-            ". mobile-vision-title mobile-vision-title .";
-        grid-area: mobile-vision-box;
-    }
-
-    .mobile-vision-title {
-        grid-area: mobile-vision-title;
-        display: flex;
-        justify-content: center;
-        color: black;
-    }
-
-    .vision-title-box {
-        display: none;
-
-    }
-
-    .vision-title {
-        display: none;
-        grid-area: vision-title;
-    }
-
-    .container-vision {
-        display: grid;
-        grid-template-columns: 0.1fr 10fr 0.1fr 0.6fr;
-        grid-template-rows: 0.8fr 3.1fr 0.5fr 0.3fr;
-        gap: 0px 0px;
-        grid-template-areas: ". mobile-vision-box mobile-vision-box mobile-vision-box"
-            ". vision-text vision-title-box vision-title-box"
-            ". . . ."
-            ". . . .";
-
-    }
-
+      '. mobile-vision-box mobile-vision-box mobile-vision-box'
+      '. vision-text vision-title-box vision-title-box'
+      '. . . .'
+      '. . . .';
+  }
 }
 
 /* .container4 {  display: grid;
@@ -354,17 +340,15 @@
 
 .text { grid-area: text; } */
 
-
 @media (min-width: 1200px) {
+  .vision-title > *,
+  .bg1 > * {
+    display: flex;
+    justify-content: center;
+  }
 
-    .vision-title>*,
-    .bg1>* {
-        display: flex;
-        justify-content: center;
-    }
-
-    .vision-text {
-        display: flex;
-        align-items: center;
-    }
+  .vision-text {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -1,4 +1,4 @@
-import { SimpleGrid, Box, Text, Flex, Image, Container, Heading, } from '@chakra-ui/react'
+import { SimpleGrid, Box, Text, Flex, Image, Container, Heading, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
 
@@ -17,9 +17,9 @@ function PortfolioCard(props: PortfolioCardProps) {
                 <Image w="100%" src={ imgURL } />
             </motion.div>
             <Flex direction="column" spacing="6">
-                <Text id="project-title">{ title }</Text>
-                <Text id="project-topic">{ topic }</Text>
-                <Text id="project-description">{ description }</Text>
+                <Text id="project-title" color={ useColorModeValue('#1a202c', 'white')}>{ title }</Text>
+                <Text id="project-topic" color={ useColorModeValue('#505050', '#e1e1e1') }>{ topic }</Text>
+                <Text id="project-description" color={ useColorModeValue('#999', '#bdbdbd') }>{ description }</Text>
 
             </Flex>
         </Box>
@@ -32,7 +32,7 @@ export default function PortfolioCards() {
 
     return (
         <>
-            <div className="portfolio-wrapper">
+            <Box className="portfolio-wrapper" bg={useColorModeValue('white','gray.800')}>
                 <Container maxW="100%" className="portfolio-container" mt="2em">
                     <Box ml={ { base: "0", lg: "6" } }>
                         <Heading id="heading-title">Portfolio</Heading>
@@ -52,7 +52,7 @@ export default function PortfolioCards() {
                         </div>
                     </SimpleGrid>
                 </Container>
-            </div>
+            </Box>
 
 
         </>

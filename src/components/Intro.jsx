@@ -1,4 +1,4 @@
-import { Text, Box, Container } from '@chakra-ui/react'
+import { Text, Box, Container, useColorModeValue, Image } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import TextAnimation from '../components/TextAnimation'
 
@@ -6,7 +6,7 @@ const Intro = () => {
 
     return (
         <>
-            <div className="intro">
+            <Box className="intro">
                 <Container w="100vw" display="flex" alignItems="center" justifyContent="center">
                     <Box px="6">
                         <motion.div
@@ -17,18 +17,18 @@ const Intro = () => {
                         >
                             <Text id="intro-text" fontSize={ { base: "20px", md: "25px", lg: "35px" } }>Hi, my name is</Text>
                         </motion.div>
-                        <motion.div
+                        {/* <motion.div
                             transition={ { duration: 1, delay: 2.5 } }
                             initial={ { opacity: 0 } }
                             animate={ { opacity: 1 } }
                             exit={ { opacity: 0 } }
                         >
-                        <Box w="50%" id="sparkle-wrapper">
-                            <Box id="sparkle-png">
-                                    <img style={ { filter: "invert(.7)" } } src={'https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/sparkle.GIF?alt=media&token=96ecb3c6-dac9-4cf5-906f-d65313873f91'} />
+                            <Box w="50%" id="sparkle-wrapper">
+                                <Box id="sparkle-png">
+                                    <Image filter={ useColorModeValue('invert(.7)', 'invert(0)') } src={ 'https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/sparkle.GIF?alt=media&token=96ecb3c6-dac9-4cf5-906f-d65313873f91' } />
+                                </Box>
                             </Box>
-                        </Box>
-                        </motion.div>
+                        </motion.div> */}
                         <TextAnimation />
 
                         <motion.div
@@ -44,8 +44,7 @@ const Intro = () => {
                         </motion.div>
                     </Box>
                 </Container>
-
-            </div>
+            </Box>
         </>
 
     )

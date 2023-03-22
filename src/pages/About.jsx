@@ -1,4 +1,4 @@
-import { Heading, Text, Box, Container, SimpleGrid } from '@chakra-ui/react'
+import { Heading, Text, Box, Container, SimpleGrid, useColorModeValue, } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { FaCss3Alt, FaReact, FaFigma } from 'react-icons/fa'
@@ -7,7 +7,7 @@ import { TbBrandVscode } from 'react-icons/tb'
 
 
 const About = () => {
-
+  const color = useColorModeValue('#8fa6c9','#9ab8e1') 
   return (
     <>
       <div className="about">
@@ -42,42 +42,42 @@ const About = () => {
             <Box>
               <Heading mt=".5em" pb="1em" id="heading-title">Skills</Heading>
               <div className="icon-container">
-                <SimpleGrid columns={ [ 2, null, 4 ] } gridGap={ { base: "10px 80px" } }>
+                <SimpleGrid color={ useColorModeValue('#505050','white')} columns={ [ 2, null, 4 ] } gridGap={ { base: "10px 80px" } }>
 
                   <Box className="box-icon">
-                    <AiFillHtml5 />
+                    <AiFillHtml5 color={color}/>
                     <Text className="icon-title">HTML5</Text>
                   </Box>
                   <Box className="box-icon">
-                    <FaCss3Alt />
+                    <FaCss3Alt color={ color }/>
                     <Text className="icon-title">CSS3</Text>
                   </Box>
                   <Box className="box-icon">
-                    <SiJavascript />
+                    <SiJavascript color={ color }/>
                     <Text className="icon-title">JavaScript</Text>
                   </Box>
                   <Box className="box-icon">
-                    <FaReact />
+                    <FaReact color={ color }/>
                     <Text className="icon-title">React</Text>
 
                   </Box>
                   <Box className="box-icon">
-                    <SiFirebase />
+                    <SiFirebase color={ color }/>
                     <Text className="icon-title">Firebase</Text>
 
                   </Box>
                   <Box className="box-icon">
-                    <SiAwsamplify />
+                    <SiAwsamplify color={ color }/>
                     <Text className="icon-title">AWS Amplify</Text>
                   </Box>
 
                   <Box className="box-icon">
-                    <TbBrandVscode />
+                    <TbBrandVscode color={ color }/>
                     <Text className="icon-title">VS Code</Text>
                   </Box>
 
                   <Box className="box-icon">
-                    < FaFigma />
+                    < FaFigma color={ color }/>
                     <Text className="icon-title">Figma</Text>
                   </Box>
 

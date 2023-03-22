@@ -10,18 +10,40 @@
 }
 
 /* Navbar */
-a:hover {
-  transition: all 0.3s;
-  text-decoration: underline;
+/* #c-icon:active {
+  color: black !important;
+} */
+
+.color-toggle:hover {
+  background-color: transparent !important;
 }
 
-#c-icon:active {
-  color: black !important;;
+.nav-link .link:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  /* background-color: #ccd0be; */
+  /* background-color: #d3ddeb; */
+  background-color: #9ab8e1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  max-width: 0;
+  transition: max-width 500ms;
 }
 
-a.active {
-  color: #8fa6c9;
-  transition: all 0.3s;
+.nav-link .link {
+  position: relative;
+  margin: 1em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.nav-link .link.active:before {
+  max-width: 10rem;
 }
 
 /* Home */
@@ -33,7 +55,7 @@ a.active {
   height: 100vh;
   width: 100vw;
   padding: 10em 0 0 0;
-  background: #f5f5f7;
+  /* background: #f5f5f7; */
   margin-top: 3.5em;
 }
 
@@ -49,7 +71,7 @@ a.active {
   font-size: 2em;
   bottom: 40px;
   right: 40px;
-  color: #8fa6c9;
+  /* color: #8fa6c9; */
   text-align: center;
 }
 
@@ -59,7 +81,7 @@ a.active {
 
 #down-arrow {
   font-size: 1.7em;
-  color: #75635b;
+  /* color: #75635b; */
 }
 
 #sparkle-png {
@@ -152,12 +174,10 @@ nav {
 }
 
 #project-topic {
-  color: #505050;
   font-size: 15px;
 }
 
 #project-description {
-  color: #999;
   font-size: 14px;
   font-weight: 400;
 }
@@ -219,14 +239,14 @@ div.animated-text {
 
 .box-icon {
   font-size: 3.5em;
-  color: #8fa6c9;
+  /* color: #8fa6c9; */
 }
 
 .icon-title {
   font-size: medium;
   white-space: nowrap;
   padding-top: 0.5em;
-  color: #505050;
+  /* color: #505050; */
   font-weight: 500;
   letter-spacing: -0.3px;
 }
@@ -242,9 +262,14 @@ div.animated-text {
   height: 100%;
 }
 
-.amplify-button--primary {
-  background: #8fa6c9 !important;
+.form-label {
+  margin-top: 0.5em;
+  margin-bottom: -1em;
 }
+
+/* .amplify-button--primary {
+  background: #8fa6c9 !important;
+} */
 
 /* Footer */
 #curved-border {
@@ -253,7 +278,7 @@ div.animated-text {
   position: sticky;
   /* z-index: -1; */
   width: 100vw;
-  fill: #8ea6c9;
+  /* fill: #8ea6c9; */
   background: inherit;
 }
 
