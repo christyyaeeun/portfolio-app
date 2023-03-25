@@ -266,7 +266,7 @@ const color=useColorModeValue('black', 'white')
           { ...getOverrideProps(overrides, "RightAlignCTASubFlex") }
         >
           <Button
-            backgroundColor={ useColorModeValue('#8fa6c9','#9ab8e182')}
+            backgroundColor={ useColorModeValue('#8e9fa0','#9be1d880')}
             color={ useColorModeValue('white', 'white') }
 
             children="Submit"

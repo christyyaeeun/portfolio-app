@@ -32,7 +32,6 @@ export const LogoIcon = createIcon({
 export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { colorMode, toggleColorMode } = useColorMode();
-    const bg = useColorModeValue('#d3ddeb', '#9ab8e1')
     const btnRef = React.useRef()
 
     function handleSelect() {
@@ -41,9 +40,9 @@ export default function Navbar() {
 
     return (
         <nav>
-            <Box w="100vw" position="fixed" top="0">
+            <Box w="100vw" position="fixed" top="0" zIndex="999">
                 <Flex
-                    bg={ useColorModeValue('white', 'whiteAlpha.200') }
+                    bg={ useColorModeValue('white', '#2c313d') }
                     minH={ '60px' }
                     py={ { base: 2 } }
                     px={ { base: 4 } }
@@ -57,7 +56,7 @@ export default function Navbar() {
                         direction={ 'row' }
                         spacing={ 6 }>
                         <Box px="2">
-                            <Link id="c-icon" to="/home">
+                            <Link id="c-icon" to="/home" _hover={ { color: '#B2C7C6' } } color={ useColorModeValue('#363737','white')}>
                                 <LogoIcon w={ { base: "2em", lg: "2.2em" } } h={ { base: "2em", lg: "2.2em" } } />
                             </Link>
                         </Box>
@@ -87,23 +86,17 @@ export default function Navbar() {
                         </Flex>
                      
                         {/* DESKTOP NAVBAR */ }
-                        <Flex className="nav-link" fontSize="large" fontWeight="700" display={ { base: 'none', md: 'flex' } } ml={ 10 }>
+                        <Flex className="nav-link" color={ useColorModeValue('#363737','white')} fontSize="large" fontWeight="700" display={ { base: 'none', md: 'flex' } } ml={ 10 }>
                             <NavLink className="link" to="/home">Home</NavLink>
                             <NavLink className="link" to="/about">About</NavLink>
                             <NavLink className="link" to="/portfolio">Portfolio</NavLink>
                             <NavLink className="link" to="/contact">Contact</NavLink>
-                            
                         </Flex>
-
-
-
-
                     </Flex>
-                    <Button className="color-toggle" variant="ghost" display={ { base: 'none', md: 'flex', lg: 'flex' } } onClick={ toggleColorMode }>
+                    <Button className="color-toggle" color={ useColorModeValue('#363737', 'white') } variant="ghost" display={ { base: 'none', md: 'flex', lg: 'flex' } } onClick={ toggleColorMode }>
                         { colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
                     </Button>
                 </Flex>
-
                 <Drawer
                     isOpen={ isOpen }
                     placement='right'
@@ -117,6 +110,7 @@ export default function Navbar() {
                             <Stack bg={ useColorModeValue('white', 'gray.700') } p={ 4 }>
                                 <Flex
                                     className="nav-link"
+                                    color={ useColorModeValue('#363737', 'white') }
                                     py={ 2 }
                                     flexDirection="column"
                                     flexWrap="nowrap"

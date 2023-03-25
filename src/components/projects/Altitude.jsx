@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import {
-    Text, 
-    Container, 
-    Box, 
-    Image, 
-    useDisclosure, 
+    Text,
+    Container,
+    Box,
+    Image,
+    useDisclosure,
     Modal,
     ModalOverlay,
     ModalCloseButton,
-    ModalContent, 
+    ModalContent,
     ModalBody,
     List,
     ListItem,
     ListIcon,
+    SimpleGrid,
 } from '@chakra-ui/react'
 import BackButton from '../BackButton'
 import { motion } from 'framer-motion'
@@ -34,8 +35,11 @@ function Altitude() {
                 <BackButton />
             </Box>
             <div className="altitude-container">
+
+
+
                 <Container maxW="100%" py="4em">
-                    <Text fontSize={ '1.5rem' } pt={ '8' } color={ 'gray.500' } textAlign={ 'center' }>Altitude</Text>
+                    {/* <Text className="project-h1" fontSize={ '1.5rem' } pt={ '8' } color={ 'gray.500' } textAlign={ 'center' }>Altitude</Text>
                     <Box p="1em" boxShadow="lg" borderRadius="2xl" bg="#dae9f8" maxW="500px" m="2em auto">
                         <List spacing={ 3 } p="1em" fontWeight="500">
                             <Text>XAMPP Stack</Text>
@@ -63,24 +67,62 @@ function Altitude() {
                                 Cyberduck
                             </ListItem>
                         </List>
-        </Box>
+                    </Box> */}
+
+                    <SimpleGrid columns={ [ 1, null, 2 ] } spacing='40px' maxW="1400px">
+                        <Box display="flex" justifyContent="center" alignItems="center" height={ { base: "50px", md:"200px", lg:"400px" } }>
+                            <Text className="project-h1" fontSize={ { base: "2rem", md: "3rem", lg: "4rem" } } pt={ '8' } color={ 'gray.500' } textAlign={ 'center' }>Altitude</Text>
+
+                        </Box>
+                        <Box height={ { base: "400px" } }>
+                            <Box p="1em" boxShadow="lg" borderRadius="2xl" bg="#dae9f8" maxW="500px" m="2em auto">
+
+                                <List spacing={ 3 } p="1em" fontWeight="500">
+                                    <Text>XAMPP Stack</Text>
+                                    <Text fontSize='medium' fontWeight="500" textTransform="uppercase" color="black">
+                                        Development Tools
+                                    </Text>
+                                    <ListItem>
+                                        <ListIcon as={ SmallAddIcon } />
+                                        PHP
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={ SmallAddIcon } />
+                                        MySQL
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={ SmallAddIcon } />
+                                        Apache
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={ SmallAddIcon } />
+                                        Spotify API
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={ SmallAddIcon } />
+                                        Cyberduck
+                                    </ListItem>
+                                </List>
+                            </Box>
+                        </Box>
+                    </SimpleGrid>
 
 
                     <Container id="problem" pt={ '5' } mb={ '5' }>
                         <Text fontSize={ 'lg' } textAlign={ 'center' }>The Problem</Text>
-<Text>
-                            Provide users the ability to search and share other user-curated playlists 
+                        <Text>
+                            Provide users the ability to search and share other user-curated playlists
                             using a relevancy tag system. Includes integration with Spotify.
 
-                     
-                        Despite the availability of several music sharing apps in the market, 
-                        there is still a gap for a platform that caters to independent and emerging 
-                        musicians who struggle to gain visibility in the crowded music industry. 
-                        Traditional music streaming services prioritize mainstream and popular artists, 
-                        leaving lesser-known artists to struggle for recognition.
-                        As a result, there is a need for a music sharing app that serves as a platform for 
-                        independent artists to showcase their talent, gain visibility, and build a community 
-                        of loyal listeners while offering a unique experience to music enthusiasts.
+
+                            Despite the availability of several music sharing apps in the market,
+                            there is still a gap for a platform that caters to independent and emerging
+                            musicians who struggle to gain visibility in the crowded music industry.
+                            Traditional music streaming services prioritize mainstream and popular artists,
+                            leaving lesser-known artists to struggle for recognition.
+                            As a result, there is a need for a music sharing app that serves as a platform for
+                            independent artists to showcase their talent, gain visibility, and build a community
+                            of loyal listeners while offering a unique experience to music enthusiasts.
                         </Text>
 
                     </Container>

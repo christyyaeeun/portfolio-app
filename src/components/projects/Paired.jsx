@@ -84,7 +84,6 @@ function Paired() {
                     <Box className="mobile-title" mb='2'>
 
                         <Heading>Paired</Heading>
-
                     </Box>
                 </div>
             </Container>
