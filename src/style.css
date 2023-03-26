@@ -256,11 +256,11 @@ div.animated-text {
   margin-bottom: 10px;
 }
 
- @media screen and (max-width: 480px) and (orientation: portrait) {
-    .icon-wrap {
-      padding-bottom: 4em !important;
-    }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .icon-wrap {
+    padding-bottom: 4em !important;
   }
+}
 
 .box-icon {
   font-size: 3.8em;
@@ -315,6 +315,29 @@ div.animated-text {
   overflow: hidden;
 }
 
+#error-box {
+  background-image: url('./img/errorbg-mobile.png');
+  background-size: cover;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.error-text {
+  	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+}
+
+
 @media (max-width: 480px) {
   .animated-text {
     font-size: 45px;
@@ -324,6 +347,14 @@ div.animated-text {
 @media (max-width: 481px) {
   .css-r6z5ec {
     transform: translate3d(-0.4rem, 108px, 0px) !important;
+  }
+}
+
+@media (min-width: 480px) {
+  #error-box {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fspace-bg.png?alt=media&token=9fc4e5b6-56f5-44ba-a8aa-e50d2889d6ae');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -433,8 +464,6 @@ div.animated-text {
     padding-bottom: 5em;
     padding-top: 7em !important;
   }
-
-
 
   @media screen and (max-width: 896px) {
     .about {
