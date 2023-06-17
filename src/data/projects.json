@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Pair",
+    "topic": "A relationship enrichment app",
+    "tag": "Cloud Development",
+    "imgCover": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FPaired-login.png?alt=media&token=30fb6100-48fc-4875-be2b-c1702c22702a",
+    "description": "A full-stack serverless relationship enrichment web app using AWS Amplify, Cognito, GraphQL, and S3.",
+    "roles": "Project Management, UI/UX, Prototyping, Full-stack, Serverless",
+    "tools": "Figma",
+    "about": "Pair is an innovative relationship enrichment app designed to help couples strengthen their bond. With its user-friendly interface and powerful features, Pair allows couples to communicate, set goals, and engage in activities that promote a healthy and fulfilling relationship. Whether you're a newlywed or have been together for years, Pair is the perfect companion to enhance your connection and foster a deeper understanding between you and your partner.",
+    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FUse%20Case%20Diagram%20OLT.png?alt=media&token=750e60d1-2ab2-497c-bb10-89688020403b",
+    "tags": ["React", "Hooks", "GraphQL", "AWS"]
+  },
+  {
+    "name": "Altitude",
+    "topic": "A music sharing app",
+    "tag": "Cloud Development",
+    "imgCover": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2Falt-landing.png?alt=media&token=6ce3af7a-fc4b-46b0-b2cd-74fff770fdb6",
+    "description": "A full-stack serverless music sharing app using AWS Amplify, Cognito, GraphQL, and S3.",
+    "roles": "UI/UX, Wireframing, Full-stack",
+    "tools": "Figma, XAMPP",
+    "about": "Altitude is a cutting-edge music sharing app that allows users to discover and share their favorite songs with friends and music enthusiasts around the world. With its intuitive interface and advanced recommendation algorithms, Altitude provides a seamless and personalized music discovery experience. Whether you're a music lover looking for new tracks or an aspiring artist seeking to showcase your talent, Altitude is the perfect platform to connect and engage with a vibrant community of music enthusiasts.",
+    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FAltitude-ERD.png?alt=media&token=4bb02de3-a2fc-4484-9650-d26aa0bf890c",
+    "tags": ["PHP", "MySQL", "Apache", "Spotify API"]
+  },
+  {
+    "name": "Morning Donuts",
+    "topic": "A website for small business",
+    "tag": "Web Design & Development",
+    "imgCover": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/morning-web.png?alt=media&token=44bf7658-8c7e-48ac-a09f-25d7d5648a4b",
+    "description": "A website design and development project for a small business.",
+    "roles": "Cloud Development, Domain Management, Hosting, Serverless",
+    "tools": "AWS Amplify, Figma",
+    "about": "Morning Donuts is a professional website design and development project aimed at helping small businesses establish their online presence. With a focus on user-friendly interfaces, visually appealing designs, and seamless functionality, Morning Donuts creates custom websites tailored to the unique needs and goals of each business. Whether you're a local bakery, coffee shop, or any other small business, Morning Donuts will work closely with you to bring your brand to life on the digital landscape.",
+    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/morning-web.png?alt=media&token=44bf7658-8c7e-48ac-a09f-25d7d5648a4b",
+    "tags": ["React", "Firebase", "GraphQL", "AWS"]
+  },
+  {
+    "name": "IdeaXcel",
+    "topic": "A e-learning platform",
+    "tag": "UI/UX Design",
+    "imgCover": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FIdeaXcelCover.png?alt=media&token=a3d526f8-d3b3-431b-b0b7-e07a016cd852",
+    "description": "IdeaXcel is an innovative e-learning platform that provides a wide range of courses and educational resources. It offers interactive lessons, quizzes, and progress tracking features to enhance the learning experience.",
+    "roles": "UI/UX Design, Wireframing, Prototyping",
+    "tools": "Figma, Adobe XD, InVision",
+    "about": "IdeaXcel aims to revolutionize online education by providing high-quality and engaging learning content. It caters to learners of all levels and offers courses in various subjects, including technology, business, arts, and more.",
+    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FIdeaXcel%20Mockup%20Flow.png?alt=media&token=28473265-e800-417b-b707-bb839541fc50",
+    "tags": ["Figma", "Glide"]
+  }
+]

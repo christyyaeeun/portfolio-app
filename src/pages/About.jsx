@@ -1,4 +1,4 @@
-import { Heading, Text, Box, Container, SimpleGrid, useColorModeValue, Flex,Link, } from '@chakra-ui/react'
+import { Heading, Text, Box, Container, SimpleGrid, useColorModeValue, Flex, } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { FaCss3Alt, FaReact, FaFigma } from 'react-icons/fa'
@@ -7,10 +7,9 @@ import { TbBrandVscode } from 'react-icons/tb'
 
 
 const About = () => {
-  const color = useColorModeValue('#B2C7C6', '#9ae1d8')
+  const color = useColorModeValue('#65a1c8', '#aed7f5')
   return (
     <>
-      <div className="about">
         <motion.div
           transition={ { duration: 1, delay: .2 } }
           initial={ { opacity: 0 } }
@@ -21,13 +20,13 @@ const About = () => {
 
           </Box>
 
-          <Container pb={ { base: "1em", md: "6em", lg: "12em" } } px={ { base: "1.3em", md: "2em", lg: "3em" } } maxW={ { base: "xl", md: "2xl", lg: "3xl" } }>
+          <Container pb={ { base: "5em", md: "6em", lg: "12em" } } px={ { base: "1.3em", md: "2em", lg: "3em" } } maxW={ { base: "xl", md: "2xl", lg: "3xl" } }>
             <Box my="2em">
               <Box>
                 <Heading mb=".5em" id="heading-title">About Me</Heading>
               </Box>
               <Flex>
-                <Text pb="3" fontSize={ { base: "15px", md: "18px", lg: "20px" } } id="about-text">
+                <Text pb="3" fontSize={ { base: "16px", md: "18px", lg: "20px" } } id="about-text">
                   I am passionate and an avid learner of all things technology and design.
                   I graduated from The University of Texas at Dallas
                   {/* { ' ' }
@@ -88,7 +87,6 @@ const About = () => {
 
           </Container>
         </motion.div>
-      </div>
     </>
 
   )

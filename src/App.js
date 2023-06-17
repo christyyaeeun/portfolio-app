@@ -3,16 +3,16 @@ import {
   ChakraProvider,
 } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Contact, Portfolio, Layout } from './pages'
+import { Home, About, Contact, Portfolio, Layout, Error } from './pages'
+import theme from "./theme";
 import "./style.css"
-import Error from './pages/Error';
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={ theme }>
       <Routes>
         <Route path="/" element={ <Layout /> }>
-          <Route path="/home" element={ <Home /> } />
+          <Route path="/" element={ <Home /> } />
           <Route path="/contact" element={ <Contact /> } />
           <Route path="/portfolio" element={ <Portfolio /> } />
           <Route path="/about" element={ <About /> } />

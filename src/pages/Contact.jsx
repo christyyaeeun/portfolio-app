@@ -18,7 +18,7 @@ const Contact = () => {
                     animate={ { opacity: 1 } }
                     exit={ { opacity: 0 } }
                 >
-                    <Container className="contact-wrap" maxW="lg" p={ { base: "1em", md: "1.5em", lg: "2em" } } mt="3em" bg={ useColorModeValue('transparent', '#2c313d') } borderRadius="2xl">
+                    <Container className="contact-wrap" w={{base:"sm", md:"md", lg:"lg"}} maxW="lg" p={ { base: "1em", md: "1.5em", lg: "2em" } } mt="3em" bg={ useColorModeValue('transparent', '#2c313d') } borderRadius="2xl">
                         <Heading>Get in Touch</Heading>
                         <Box>
                             <ContactFormCreateForm />
@@ -33,3 +33,5 @@ const Contact = () => {
 }
 
 export default Contact
+
+

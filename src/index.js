@@ -6,21 +6,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import '@aws-amplify/ui-react/styles.css';
-import ScrollToTop from './components/ScrollToTop';
+// import ScrollToTop from './components/ScrollToTop';
+import awsconfig from './aws-exports';
+import { Amplify } from 'aws-amplify';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
 root.render(
   <BrowserRouter>
-  <ScrollToTop>
     <StrictMode>
       <ColorModeScript />
       <App />
     </StrictMode>
-    </ScrollToTop>
   </BrowserRouter>
 );
 
+Amplify.configure(awsconfig);
 serviceWorker.unregister();
 reportWebVitals();

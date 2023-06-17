@@ -35,7 +35,7 @@ a#c-icon:hover {
   content: '';
   z-index: -1;
   position: absolute;
-  background-color: #a0b3b4;
+  background-color: #90cdf4;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -53,13 +53,45 @@ a#c-icon:hover {
   z-index: 1;
 }
 
+/* .nav-link .link:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background-color: var(--highlight-color);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  max-width: 0;
+  transition: max-width 500ms;
+}
+
+.nav-link .link {
+  position: relative;
+  margin: 1em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  color: var(--text-color);
+} */
+
 .nav-link .link.active:before {
   max-width: 10rem;
 }
 
 .nav-link .link:hover {
-  color: black;
+  color: #363737;
 }
+
+
+.nav-link .link,
+.nav-link .link:visited,
+.nav-link .link:hover,
+.nav-link .link:focus {
+  color: var(--text-color);
+}
+
 
 /* Home */
 .homepage {
@@ -68,7 +100,7 @@ a#c-icon:hover {
 
 #intro-text {
   font-family: 'Cormorant Garamond', serif;
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
   position: relative;
   z-index: 1;
   margin-bottom: 5px;
@@ -154,6 +186,7 @@ section span {
   letter-spacing: 1px;
   font-weight: 500;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .hover-bg:hover .hover-text > h4 {
   opacity: 1;
@@ -198,11 +231,13 @@ section span {
   letter-spacing: 0.1rem;
 }
 
-#project-subtitle {
-  font-weight: 500;
+.project-subtitle {
   font-size: large;
-  line-height: 2;
-  margin-top: 0.5em;
+  font-weight: 700;
+}
+
+#pb.project-subtitle {
+  margin-bottom: 0.5em;
 }
 
 .project-text {
@@ -224,7 +259,6 @@ section span {
 
 /* About */
 #about-text {
-  font-family: Cormorant Garamond, serif;
   letter-spacing: -0.5px;
   line-height: 1.8;
 }
@@ -233,9 +267,9 @@ section span {
 .animated-text {
   font-weight: bold;
   font-weight: 700;
-  font-family: 'Inter-Bold', 'Inter', sans-serif;
   letter-spacing: -1px;
   white-space: nowrap;
+  font-size: xxx-large;
 }
 
 div.animated-text {
@@ -300,7 +334,6 @@ div.animated-text {
   position: relative;
   z-index: 1;
   text-transform: uppercase;
-  color: white;
   margin-top: auto;
 }
 
@@ -321,27 +354,20 @@ div.animated-text {
 }
 
 @keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 .error-text {
-  	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
-}
-
-
-@media (max-width: 480px) {
-  .animated-text {
-    font-size: 45px;
-  }
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }
 
 @media (max-width: 481px) {
@@ -355,6 +381,10 @@ div.animated-text {
     background-image: url('https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fspace-bg.png?alt=media&token=9fc4e5b6-56f5-44ba-a8aa-e50d2889d6ae');
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  .animate-text {
+    font-size:xx-large
   }
 }
 

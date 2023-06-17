@@ -32,11 +32,16 @@ export const LogoIcon = createIcon({
 export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { colorMode, toggleColorMode } = useColorMode();
+    const textMode = useColorModeValue("colorMode.light", "colorMode.dark")
+
     const btnRef = React.useRef()
 
     function handleSelect() {
         onClose();
     }
+    const handleViewResume = () => {
+        window.open('https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/Docs%2FCHRISTY_PARK_RESUME.pdf?alt=media&token=d6398e67-0838-4edf-bece-d1354c00fc5a', '_blank');
+    };
 
     return (
         <nav>
@@ -56,13 +61,13 @@ export default function Navbar() {
                         direction={ 'row' }
                         spacing={ 6 }>
                         <Box px="2">
-                            <Link id="c-icon" to="/home" _hover={ { color: '#B2C7C6' } } color={ useColorModeValue('#363737','white')}>
+                            <Link id="c-icon" to="/home" _hover={ { color: '#B2C7C6' } } color={ useColorModeValue('#363737', 'white') }>
                                 <LogoIcon w={ { base: "2em", lg: "2.2em" } } h={ { base: "2em", lg: "2.2em" } } />
                             </Link>
                         </Box>
-                  
+
                     </Stack>
-                 
+
                     <Flex flex={ { base: 1 } } justify={ { base: 'center', md: 'start' } }>
 
                         <Flex
@@ -70,7 +75,7 @@ export default function Navbar() {
                             flex={ { base: 1, md: 'auto' } }
                             ml={ { base: -2 } }
                             display={ { base: 'flex', md: 'none', lg: 'none' } }>
-                       
+
                             <IconButton ref={ btnRef }
                                 isOpen={ isOpen }
                                 onClick={ onOpen }
@@ -84,18 +89,21 @@ export default function Navbar() {
                                 { colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
                             </Button>
                         </Flex>
-                     
+
                         {/* DESKTOP NAVBAR */ }
-                        <Flex className="nav-link" color={ useColorModeValue('#363737','white')} fontSize="large" fontWeight="700" display={ { base: 'none', md: 'flex' } } ml={ 10 }>
-                            <NavLink className="link" to="/home">Home</NavLink>
+                        <Flex className="nav-link" style={ { "--text-color": textMode, "--highlight-color": "#0461cf7d" } } fontSize="large" fontWeight="700" display={ { base: 'none', md: 'flex' } } ml={ 10 }>
+                            <NavLink className="link" to="/">Home</NavLink>
                             <NavLink className="link" to="/about">About</NavLink>
                             <NavLink className="link" to="/portfolio">Portfolio</NavLink>
                             <NavLink className="link" to="/contact">Contact</NavLink>
                         </Flex>
                     </Flex>
+                    <Button display={ { base: "none", lg: "block" } } colorScheme="blue" variant={ useColorModeValue("outline", "solid") } onClick={ handleViewResume }>View Resume</Button>
+
                     <Button className="color-toggle" color={ useColorModeValue('#363737', 'white') } variant="ghost" display={ { base: 'none', md: 'flex', lg: 'flex' } } onClick={ toggleColorMode }>
                         { colorMode === 'light' ? <MoonIcon /> : <SunIcon /> }
                     </Button>
+
                 </Flex>
                 <Drawer
                     isOpen={ isOpen }
@@ -110,19 +118,17 @@ export default function Navbar() {
                             <Stack bg={ useColorModeValue('white', 'gray.700') } p={ 4 }>
                                 <Flex
                                     className="nav-link"
-                                    color={ useColorModeValue('#363737', 'white') }
-                                    py={ 2 }
-                                    flexDirection="column"
-                                    flexWrap="nowrap"
-                                    justify={ 'space-between' }
-                                    align={ 'flex-start' }
+                                    // color={ textColor }
+                                    style={ { "--text-color": textMode, "--highlight-color": "#0461cf7d" } }
                                     fontSize="large"
                                     fontWeight="700"
-                                    _hover={ {
-                                        textDecoration: 'none',
-                                    } }>
-
-                                    <NavLink className="link" onClick={ handleSelect } to="/home">Home</NavLink>
+                                    display={ { base: 'flex', md: 'none' } }
+                                    flexDirection="column"
+                                    ml={ 10 }
+                                    whiteSpace="nowrap"
+                                    m="1em"
+                                >
+                                    <NavLink className="link" onClick={ handleSelect } to="/">Home</NavLink>
                                     <NavLink className="link" to="/about" onClick={ handleSelect }>About</NavLink>
                                     <NavLink className="link" to="/portfolio" onClick={ handleSelect }>Portfolio</NavLink>
                                     <NavLink className="link" to="/contact" onClick={ handleSelect }>Contact</NavLink>

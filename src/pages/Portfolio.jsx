@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import ExperienceCards from '../components/ExperienceCards'
+import ProjectCards from '../components/ProjectCards'
 import { Box } from '@chakra-ui/react'
 
 const Portfolio = () => {
@@ -12,8 +12,8 @@ const Portfolio = () => {
                 animate={ { opacity: 1 } }
                 exit={ { opacity: 0 } }
             >
-                <Box className="portfolio-container" pt={{base:"3em", md:"4em", lg:"5em"}}>
-                    <ExperienceCards />
+                <Box className="portfolio-container" pt={{base:"3em", md:"4em", lg:"5em"}} pb="5em">
+                    <ProjectCards />
                 </Box>
             </motion.div>
         </>
