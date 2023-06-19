@@ -13,11 +13,16 @@ import {
   TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
+import { useColorModeValue } from "@chakra-ui/react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { ContactForm } from "../models";
+import { Contact } from "../models";
 import { fetchByPath, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
-export default function ContactFormCreateForm(props) {
+import { Input, Textarea, FormLabel, Text, } from "@chakra-ui/react";
+export default function ContactCreateForm(props) {
+  const textMode = useColorModeValue('#2c2c2c', 'white')
+  const btnBg = useColorModeValue('blue.300', 'blue.200')
+
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -30,27 +35,27 @@ export default function ContactFormCreateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    number: "",
+    phone: "",
     email: "",
     message: "",
   };
-  const [name, setName] = React.useState(initialValues.name);
-  const [number, setNumber] = React.useState(initialValues.number);
-  const [email, setEmail] = React.useState(initialValues.email);
-  const [message, setMessage] = React.useState(initialValues.message);
-  const [errors, setErrors] = React.useState({});
+  const [ name, setName ] = React.useState(initialValues.name);
+  const [ phone, setPhone ] = React.useState(initialValues.phone);
+  const [ email, setEmail ] = React.useState(initialValues.email);
+  const [ message, setMessage ] = React.useState(initialValues.message);
+  const [ errors, setErrors ] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
-    setNumber(initialValues.number);
+    setPhone(initialValues.phone);
     setEmail(initialValues.email);
     setMessage(initialValues.message);
     setErrors({});
   };
   const validations = {
-    name: [{ type: "Required" }],
-    number: [{ type: "Required" }, { type: "Phone" }],
-    email: [{ type: "Required" }, { type: "Email" }],
-    message: [{ type: "Required" }],
+    name: [],
+    phone: [ { type: "Phone" } ],
+    email: [ { type: "Required" }, { type: "Email" } ],
+    message: [ { type: "Required" } ],
   };
   const runValidationTasks = async (
     fieldName,
@@ -61,12 +66,12 @@ export default function ContactFormCreateForm(props) {
       currentValue && getDisplayValue
         ? getDisplayValue(currentValue)
         : currentValue;
-    let validationResponse = validateField(value, validations[fieldName]);
+    let validationResponse = validateField(value, validations[ fieldName ]);
     const customValidator = fetchByPath(onValidate, fieldName);
     if (customValidator) {
       validationResponse = await customValidator(value, validationResponse);
     }
-    setErrors((errors) => ({ ...errors, [fieldName]: validationResponse }));
+    setErrors((errors) => ({ ...errors, [ fieldName ]: validationResponse }));
     return validationResponse;
   };
   return (
@@ -75,26 +80,26 @@ export default function ContactFormCreateForm(props) {
       rowGap="15px"
       columnGap="15px"
       padding="20px"
-      onSubmit={async (event) => {
+      onSubmit={ async (event) => {
         event.preventDefault();
         let modelFields = {
           name,
-          number,
+          phone,
           email,
           message,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
-            if (Array.isArray(modelFields[fieldName])) {
+            if (Array.isArray(modelFields[ fieldName ])) {
               promises.push(
-                ...modelFields[fieldName].map((item) =>
+                ...modelFields[ fieldName ].map((item) =>
                   runValidationTasks(fieldName, item)
                 )
               );
               return promises;
             }
             promises.push(
-              runValidationTasks(fieldName, modelFields[fieldName])
+              runValidationTasks(fieldName, modelFields[ fieldName ])
             );
             return promises;
           }, [])
@@ -106,12 +111,12 @@ export default function ContactFormCreateForm(props) {
           modelFields = onSubmit(modelFields);
         }
         try {
-          Object.entries(modelFields).forEach(([key, value]) => {
+          Object.entries(modelFields).forEach(([ key, value ]) => {
             if (typeof value === "string" && value.trim() === "") {
-              modelFields[key] = undefined;
+              modelFields[ key ] = undefined;
             }
           });
-          await DataStore.save(new ContactForm(modelFields));
+          await DataStore.save(new Contact(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -123,21 +128,23 @@ export default function ContactFormCreateForm(props) {
             onError(modelFields, err.message);
           }
         }
-      }}
-      {...getOverrideProps(overrides, "ContactFormCreateForm")}
-      {...rest}
+      } }
+      { ...getOverrideProps(overrides, "ContactCreateForm") }
+      { ...rest }
     >
+      <FormLabel color={ textMode } mb="-1em" fontSize="lg">Full Name</FormLabel>
       <TextField
-        label="Name"
-        isRequired={true}
-        isReadOnly={false}
-        value={name}
-        onChange={(e) => {
+        color={ textMode }
+        isRequired={ false }
+        isReadOnly={ false }
+        placeholder="First and last name"
+        value={ name }
+        onChange={ (e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name: value,
-              number,
+              phone,
               email,
               message,
             };
@@ -148,51 +155,57 @@ export default function ContactFormCreateForm(props) {
             runValidationTasks("name", value);
           }
           setName(value);
-        }}
-        onBlur={() => runValidationTasks("name", name)}
-        errorMessage={errors.name?.errorMessage}
-        hasError={errors.name?.hasError}
-        {...getOverrideProps(overrides, "name")}
+        } }
+        onBlur={ () => runValidationTasks("name", name) }
+        errorMessage={ errors.name?.errorMessage }
+        hasError={ errors.name?.hasError }
+        { ...getOverrideProps(overrides, "name") }
       ></TextField>
+      <FormLabel color={ textMode } mb="-1em" fontSize="lg">Phone</FormLabel>
+
       <TextField
-        label="Phone"
-        isRequired={true}
-        isReadOnly={false}
+        color={ textMode }
+        isRequired={ false }
+        isReadOnly={ false }
+        placeholder="111-111-1111"
         type="tel"
-        value={number}
-        onChange={(e) => {
+        value={ phone }
+        onChange={ (e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              number: value,
+              phone: value,
               email,
               message,
             };
             const result = onChange(modelFields);
-            value = result?.number ?? value;
+            value = result?.phone ?? value;
           }
-          if (errors.number?.hasError) {
-            runValidationTasks("number", value);
+          if (errors.phone?.hasError) {
+            runValidationTasks("phone", value);
           }
-          setNumber(value);
-        }}
-        onBlur={() => runValidationTasks("number", number)}
-        errorMessage={errors.number?.errorMessage}
-        hasError={errors.number?.hasError}
-        {...getOverrideProps(overrides, "number")}
+          setPhone(value);
+        } }
+        onBlur={ () => runValidationTasks("phone", phone) }
+        errorMessage={ errors.phone?.errorMessage }
+        hasError={ errors.phone?.hasError }
+        { ...getOverrideProps(overrides, "phone") }
       ></TextField>
+      <FormLabel color={ textMode } mb="-1em" fontSize="lg">Email</FormLabel>
+
       <TextField
-        label="Email"
-        isRequired={true}
-        isReadOnly={false}
-        value={email}
-        onChange={(e) => {
+        color={ textMode }
+        isRequired={ true }
+        isReadOnly={ false }
+        placeholder="Enter email"
+        value={ email }
+        onChange={ (e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              number,
+              phone,
               email: value,
               message,
             };
@@ -203,22 +216,25 @@ export default function ContactFormCreateForm(props) {
             runValidationTasks("email", value);
           }
           setEmail(value);
-        }}
-        onBlur={() => runValidationTasks("email", email)}
-        errorMessage={errors.email?.errorMessage}
-        hasError={errors.email?.hasError}
-        {...getOverrideProps(overrides, "email")}
+        } }
+        onBlur={ () => runValidationTasks("email", email) }
+        errorMessage={ errors.email?.errorMessage }
+        hasError={ errors.email?.hasError }
+        { ...getOverrideProps(overrides, "email") }
       ></TextField>
+      <FormLabel color={ textMode } mb="-1em" fontSize="lg">Message</FormLabel>
+
       <TextAreaField
-        label="Message"
-        isRequired={true}
-        isReadOnly={false}
-        onChange={(e) => {
+        color={ textMode }
+        isRequired={ true }
+        isReadOnly={ false }
+        placeholder="Enter message"
+        onChange={ (e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              number,
+              phone,
               email,
               message: value,
             };
@@ -229,35 +245,38 @@ export default function ContactFormCreateForm(props) {
             runValidationTasks("message", value);
           }
           setMessage(value);
-        }}
-        onBlur={() => runValidationTasks("message", message)}
-        errorMessage={errors.message?.errorMessage}
-        hasError={errors.message?.hasError}
-        {...getOverrideProps(overrides, "message")}
+        } }
+        onBlur={ () => runValidationTasks("message", message) }
+        errorMessage={ errors.message?.errorMessage }
+        hasError={ errors.message?.hasError }
+        { ...getOverrideProps(overrides, "message") }
       ></TextAreaField>
       <Flex
         justifyContent="space-between"
-        {...getOverrideProps(overrides, "CTAFlex")}
+        { ...getOverrideProps(overrides, "CTAFlex") }
       >
         <Button
+          color={ textMode }
           children="Clear"
           type="reset"
-          onClick={(event) => {
+          onClick={ (event) => {
             event.preventDefault();
             resetStateValues();
-          }}
-          {...getOverrideProps(overrides, "ClearButton")}
+          } }
+          { ...getOverrideProps(overrides, "ClearButton") }
         ></Button>
         <Flex
           gap="15px"
-          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
+          { ...getOverrideProps(overrides, "RightAlignCTASubFlex") }
         >
           <Button
+            bg={ btnBg }
+            className="submit-btn"
             children="Submit"
             type="submit"
             variation="primary"
-            isDisabled={Object.values(errors).some((e) => e?.hasError)}
-            {...getOverrideProps(overrides, "SubmitButton")}
+            isDisabled={ Object.values(errors).some((e) => e?.hasError) }
+            { ...getOverrideProps(overrides, "SubmitButton") }
           ></Button>
         </Flex>
       </Flex>

@@ -8,13 +8,13 @@
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { ContactForm } from "../models";
+import { Contact } from "../models";
 import { fetchByPath, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
-export default function ContactFormUpdateForm(props) {
+export default function ContactUpdateForm(props) {
   const {
     id: idProp,
-    contactForm,
+    contact,
     onSuccess,
     onError,
     onSubmit,
@@ -25,39 +25,37 @@ export default function ContactFormUpdateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    number: "",
+    phone: "",
     email: "",
     message: "",
   };
   const [name, setName] = React.useState(initialValues.name);
-  const [number, setNumber] = React.useState(initialValues.number);
+  const [phone, setPhone] = React.useState(initialValues.phone);
   const [email, setEmail] = React.useState(initialValues.email);
   const [message, setMessage] = React.useState(initialValues.message);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = contactFormRecord
-      ? { ...initialValues, ...contactFormRecord }
+    const cleanValues = contactRecord
+      ? { ...initialValues, ...contactRecord }
       : initialValues;
     setName(cleanValues.name);
-    setNumber(cleanValues.number);
+    setPhone(cleanValues.phone);
     setEmail(cleanValues.email);
     setMessage(cleanValues.message);
     setErrors({});
   };
-  const [contactFormRecord, setContactFormRecord] = React.useState(contactForm);
+  const [contactRecord, setContactRecord] = React.useState(contact);
   React.useEffect(() => {
     const queryData = async () => {
-      const record = idProp
-        ? await DataStore.query(ContactForm, idProp)
-        : contactForm;
-      setContactFormRecord(record);
+      const record = idProp ? await DataStore.query(Contact, idProp) : contact;
+      setContactRecord(record);
     };
     queryData();
-  }, [idProp, contactForm]);
-  React.useEffect(resetStateValues, [contactFormRecord]);
+  }, [idProp, contact]);
+  React.useEffect(resetStateValues, [contactRecord]);
   const validations = {
-    name: [{ type: "Required" }],
-    number: [{ type: "Required" }, { type: "Phone" }],
+    name: [],
+    phone: [{ type: "Phone" }],
     email: [{ type: "Required" }, { type: "Email" }],
     message: [{ type: "Required" }],
   };
@@ -88,7 +86,7 @@ export default function ContactFormUpdateForm(props) {
         event.preventDefault();
         let modelFields = {
           name,
-          number,
+          phone,
           email,
           message,
         };
@@ -121,7 +119,7 @@ export default function ContactFormUpdateForm(props) {
             }
           });
           await DataStore.save(
-            ContactForm.copyOf(contactFormRecord, (updated) => {
+            Contact.copyOf(contactRecord, (updated) => {
               Object.assign(updated, modelFields);
             })
           );
@@ -134,12 +132,12 @@ export default function ContactFormUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ContactFormUpdateForm")}
+      {...getOverrideProps(overrides, "ContactUpdateForm")}
       {...rest}
     >
       <TextField
         label="Name"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={name}
         onChange={(e) => {
@@ -147,7 +145,7 @@ export default function ContactFormUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
-              number,
+              phone,
               email,
               message,
             };
@@ -165,32 +163,32 @@ export default function ContactFormUpdateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Number"
-        isRequired={true}
+        label="Phone"
+        isRequired={false}
         isReadOnly={false}
         type="tel"
-        value={number}
+        value={phone}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              number: value,
+              phone: value,
               email,
               message,
             };
             const result = onChange(modelFields);
-            value = result?.number ?? value;
+            value = result?.phone ?? value;
           }
-          if (errors.number?.hasError) {
-            runValidationTasks("number", value);
+          if (errors.phone?.hasError) {
+            runValidationTasks("phone", value);
           }
-          setNumber(value);
+          setPhone(value);
         }}
-        onBlur={() => runValidationTasks("number", number)}
-        errorMessage={errors.number?.errorMessage}
-        hasError={errors.number?.hasError}
-        {...getOverrideProps(overrides, "number")}
+        onBlur={() => runValidationTasks("phone", phone)}
+        errorMessage={errors.phone?.errorMessage}
+        hasError={errors.phone?.hasError}
+        {...getOverrideProps(overrides, "phone")}
       ></TextField>
       <TextField
         label="Email"
@@ -202,7 +200,7 @@ export default function ContactFormUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
-              number,
+              phone,
               email: value,
               message,
             };
@@ -229,7 +227,7 @@ export default function ContactFormUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
-              number,
+              phone,
               email,
               message: value,
             };
@@ -257,7 +255,7 @@ export default function ContactFormUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || contactForm)}
+          isDisabled={!(idProp || contact)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -269,7 +267,7 @@ export default function ContactFormUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || contactForm) ||
+              !(idProp || contact) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}

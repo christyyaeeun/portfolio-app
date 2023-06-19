@@ -62,7 +62,7 @@ function Home() {
                                 exit={ { opacity: 0 } }
                             >
                                 <Text id="intro-text" fontSize={ { base: "16px", md: "25px", lg: "25px" } } fontWeight="400">
-                                    Dallas based front-end developer & visual designer who builds responsive, user-centric, and intuitive user interfaces for the web.
+                                    Dallas based web developer & designer who builds responsive, user-centric, and intuitive user interfaces for the web.
                                 </Text>
                             </motion.div>
                         </Box>

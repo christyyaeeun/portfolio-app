@@ -10,6 +10,11 @@
       "StackName": "amplify-portfolioapp-staging-203447",
       "StackId": "arn:aws:cloudformation:us-east-2:555445169199:stack/amplify-portfolioapp-staging-203447/a82e6720-c75e-11ed-abf5-02260eca810a",
       "AmplifyAppId": "d3fbceloe3qqf8"
+    },
+    "categories": {
+      "api": {
+        "portfolioapp": {}
+      }
     }
   }
 }

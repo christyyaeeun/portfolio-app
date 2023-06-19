@@ -7,41 +7,41 @@
 import * as React from "react";
 import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { ContactForm } from "../models";
+import { Contact } from "../models";
 export declare type ValidationResponse = {
     hasError: boolean;
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type ContactFormUpdateFormInputValues = {
+export declare type ContactUpdateFormInputValues = {
     name?: string;
-    number?: string;
+    phone?: string;
     email?: string;
     message?: string;
 };
-export declare type ContactFormUpdateFormValidationValues = {
+export declare type ContactUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
-    number?: ValidationFunction<string>;
+    phone?: ValidationFunction<string>;
     email?: ValidationFunction<string>;
     message?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type ContactFormUpdateFormOverridesProps = {
-    ContactFormUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type ContactUpdateFormOverridesProps = {
+    ContactUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
-    number?: PrimitiveOverrideProps<TextFieldProps>;
+    phone?: PrimitiveOverrideProps<TextFieldProps>;
     email?: PrimitiveOverrideProps<TextFieldProps>;
     message?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type ContactFormUpdateFormProps = React.PropsWithChildren<{
-    overrides?: ContactFormUpdateFormOverridesProps | undefined | null;
+export declare type ContactUpdateFormProps = React.PropsWithChildren<{
+    overrides?: ContactUpdateFormOverridesProps | undefined | null;
 } & {
     id?: string;
-    contactForm?: ContactForm;
-    onSubmit?: (fields: ContactFormUpdateFormInputValues) => ContactFormUpdateFormInputValues;
-    onSuccess?: (fields: ContactFormUpdateFormInputValues) => void;
-    onError?: (fields: ContactFormUpdateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: ContactFormUpdateFormInputValues) => ContactFormUpdateFormInputValues;
-    onValidate?: ContactFormUpdateFormValidationValues;
+    contact?: Contact;
+    onSubmit?: (fields: ContactUpdateFormInputValues) => ContactUpdateFormInputValues;
+    onSuccess?: (fields: ContactUpdateFormInputValues) => void;
+    onError?: (fields: ContactUpdateFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: ContactUpdateFormInputValues) => ContactUpdateFormInputValues;
+    onValidate?: ContactUpdateFormValidationValues;
 } & React.CSSProperties>;
-export default function ContactFormUpdateForm(props: ContactFormUpdateFormProps): React.ReactElement;
+export default function ContactUpdateForm(props: ContactUpdateFormProps): React.ReactElement;

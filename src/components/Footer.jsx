@@ -10,8 +10,8 @@ import {
 } from '@chakra-ui/react';
 
 export default function Footer() {
-    const footerBg = useColorModeValue("blue.100", "dark.100")
-    const textMode = useColorModeValue("#1a202c", "#ffffff")
+    const footerBg = useColorModeValue("blue.200", "dark.100")
+    const textMode = useColorModeValue("#2C2C2C", "#ffffff")
     return (
         <>
             <div className="footer">

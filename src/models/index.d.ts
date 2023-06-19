@@ -6,36 +6,36 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
-type EagerContactForm = {
+type EagerContact = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<ContactForm, 'id'>;
+    identifier: ManagedIdentifier<Contact, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly name: string;
-  readonly number: string;
+  readonly name?: string | null;
+  readonly phone?: string | null;
   readonly email: string;
   readonly message: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-type LazyContactForm = {
+type LazyContact = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<ContactForm, 'id'>;
+    identifier: ManagedIdentifier<Contact, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly name: string;
-  readonly number: string;
+  readonly name?: string | null;
+  readonly phone?: string | null;
   readonly email: string;
   readonly message: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-export declare type ContactForm = LazyLoading extends LazyLoadingDisabled ? EagerContactForm : LazyContactForm
+export declare type Contact = LazyLoading extends LazyLoadingDisabled ? EagerContact : LazyContact
 
-export declare const ContactForm: (new (init: ModelInit<ContactForm>) => ContactForm) & {
-  copyOf(source: ContactForm, mutator: (draft: MutableModel<ContactForm>) => MutableModel<ContactForm> | void): ContactForm;
+export declare const Contact: (new (init: ModelInit<Contact>) => Contact) & {
+  copyOf(source: Contact, mutator: (draft: MutableModel<Contact>) => MutableModel<Contact> | void): Contact;
 }

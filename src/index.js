@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import '@aws-amplify/ui-react/styles.css';
-// import ScrollToTop from './components/ScrollToTop';
 import awsconfig from './aws-exports';
 import { Amplify } from 'aws-amplify';
 

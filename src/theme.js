@@ -1,3 +1,4 @@
+// Theme.js
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -19,16 +20,23 @@ const theme = extendTheme({
             dark: "#0461cf",
         },
         blue: {
-            100:"#c6e4fa",
+            100: "#c6e4fa",
             200: "#aed7f5",
-            300:"#77BDEC",
-            400:"#72b3df",
-        }
+            300: "#77BDEC",
+            400: "#72b3df",
+        },
     },
     styles: {
         global: (props) => ({
+            "body": {
+                color: props.colorMode === "light" ? "#2c2c2c" : "#ffffff",
+            },
             ".nav-link .link": {
                 color: props.colorMode === "light" ? "#2c313d" : "#ffffff",
+            },
+            ".submit-btn": {
+                bg: props.colorMode === "light" ? "blue.200" : "blue.300",
+                color: props.colorMode === "light" ? "#2c2c2c" : "#ffffff",
             },
         }),
     },

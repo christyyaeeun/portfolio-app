@@ -4,8 +4,8 @@ import { schema } from './schema';
 
 
 
-const { ContactForm } = initSchema(schema);
+const { Contact } = initSchema(schema);
 
 export {
-  ContactForm
+  Contact
 };

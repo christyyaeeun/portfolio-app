@@ -269,7 +269,6 @@ section span {
   font-weight: 700;
   letter-spacing: -1px;
   white-space: nowrap;
-  font-size: xxx-large;
 }
 
 div.animated-text {
@@ -312,6 +311,10 @@ div.animated-text {
 }
 
 /* Contact */
+.submit-btn {
+
+}
+
 .form-label {
   margin-top: 0.5em;
   margin-bottom: -1em;
@@ -398,9 +401,6 @@ div.animated-text {
   .box-icon {
     font-size: 4.5em;
   }
-  .animated-text {
-    font-size: 60px;
-  }
 
   #curved-border {
     margin-bottom: -6px;
@@ -415,9 +415,6 @@ div.animated-text {
     font-size: large;
   }
 
-  .animated-text {
-    font-size: 80px;
-  }
   .css-onkibi {
     width: 2em !important;
     height: 2em !important;

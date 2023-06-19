@@ -8,7 +8,7 @@
     "roles": "Project Management, UI/UX, Prototyping, Full-stack, Serverless",
     "tools": "Figma",
     "about": "Pair is an innovative relationship enrichment app designed to help couples strengthen their bond. With its user-friendly interface and powerful features, Pair allows couples to communicate, set goals, and engage in activities that promote a healthy and fulfilling relationship. Whether you're a newlywed or have been together for years, Pair is the perfect companion to enhance your connection and foster a deeper understanding between you and your partner.",
-    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FUse%20Case%20Diagram%20OLT.png?alt=media&token=750e60d1-2ab2-497c-bb10-89688020403b",
+    "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2Fpair_img.png?alt=media&token=cc7b0553-1e41-4820-8703-444036d7c443",
     "tags": ["React", "Hooks", "GraphQL", "AWS"]
   },
   {
@@ -42,7 +42,7 @@
     "imgCover": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FIdeaXcelCover.png?alt=media&token=a3d526f8-d3b3-431b-b0b7-e07a016cd852",
     "description": "IdeaXcel is an innovative e-learning platform that provides a wide range of courses and educational resources. It offers interactive lessons, quizzes, and progress tracking features to enhance the learning experience.",
     "roles": "UI/UX Design, Wireframing, Prototyping",
-    "tools": "Figma, Adobe XD, InVision",
+    "tools": "Figma, Adobe XD",
     "about": "IdeaXcel aims to revolutionize online education by providing high-quality and engaging learning content. It caters to learners of all levels and offers courses in various subjects, including technology, business, arts, and more.",
     "imgURL": "https://firebasestorage.googleapis.com/v0/b/christypark-portfolio.appspot.com/o/portfolio%20files%2Fproject%20files%2FIdeaXcel%20Mockup%20Flow.png?alt=media&token=28473265-e800-417b-b707-bb839541fc50",
     "tags": ["Figma", "Glide"]
