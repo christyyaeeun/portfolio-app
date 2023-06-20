@@ -22,10 +22,6 @@ nav {
   background-color: transparent !important;
 }
 
-a#c-icon:hover {
-  color: #a0b3b4;
-}
-
 .nav-link .link:hover,
 .nav-link .link:focus {
   outline: none;
@@ -311,10 +307,6 @@ div.animated-text {
 }
 
 /* Contact */
-.submit-btn {
-
-}
-
 .form-label {
   margin-top: 0.5em;
   margin-bottom: -1em;

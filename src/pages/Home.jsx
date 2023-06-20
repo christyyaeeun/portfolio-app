@@ -3,8 +3,8 @@ import { motion, useInView } from "framer-motion";
 import Contact from './Contact';
 import { Text, Container, Flex, Box, useColorModeValue } from '@chakra-ui/react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import ProjectCards from "../components/ProjectCards";
-import TextAnimation from "../components/TextAnimation";
+import ProjectCards from "../components/Portfolio/ProjectCards";
+import TextAnimation from "../components/Home/TextAnimation";
 
 function Section({ children }) {
     const ref = useRef(null);
@@ -40,6 +40,7 @@ function Home() {
 
     return (
         <>
+
             <Box className="intro-container" h="100vh" pt="10em" bg={ useColorModeValue('#ffffff', 'gray.800') }>
                 <Box className="intro">
                     <Container w="100vw" display="flex" alignItems="center" justifyContent="center">
@@ -75,7 +76,7 @@ function Home() {
                         animate={ { opacity: 1 } }
                         exit={ { opacity: 0 } }
                     >
-                        <Box className="btn-animation" color={textColor}>
+                        <Box className="btn-animation" color={ textColor }>
                             <button id="down-arrow" onClick={ handleClick }><MdKeyboardArrowDown /></button>
                         </Box>
                     </motion.div>
@@ -95,7 +96,6 @@ function Home() {
                     <Contact />
                 </Box>
             </Section>
-
         </>
     )
 }

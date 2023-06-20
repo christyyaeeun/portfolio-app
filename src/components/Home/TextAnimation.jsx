@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heading } from "@chakra-ui/react";
+
 const TextAnimation = () => {
     const text = "Christy Park";
 

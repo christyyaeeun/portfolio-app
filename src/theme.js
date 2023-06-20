@@ -1,42 +1,50 @@
-// Theme.js
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
     colors: {
-        primary: {
-            10: "#0461cf29",
-            20: "#0461cf7d",
-            50: "#b3c7f7",
-            100: "#8babf1",
-            200: "#0073e6",
-            300: "#0461cf",
-        },
         dark: {
             100: "#2c323e",
             200: "#2c313d",
         },
-        colorMode: {
-            light: "#0461cf7d",
-            dark: "#0461cf",
-        },
         blue: {
-            100: "#c6e4fa",
+            50: "#c6e4fa",
+            100: "#add7f5",
             200: "#aed7f5",
-            300: "#77BDEC",
-            400: "#72b3df",
+            300: "#84B2E7",
+            400: "#448ADB",
+        },
+        textMode: {
+            light: "#2C2C2C",
+            dark: "#ffffff",
+        },
+    },
+    textStyles: {
+        light: {
+            color: "#2C2C2C",
+        },
+        dark: {
+            color: "#ffffff",
         },
     },
     styles: {
         global: (props) => ({
-            "body": {
+            ".amplify-input": {
                 color: props.colorMode === "light" ? "#2c2c2c" : "#ffffff",
             },
             ".nav-link .link": {
                 color: props.colorMode === "light" ? "#2c313d" : "#ffffff",
             },
             ".submit-btn": {
-                bg: props.colorMode === "light" ? "blue.200" : "blue.300",
-                color: props.colorMode === "light" ? "#2c2c2c" : "#ffffff",
+                bg: props.colorMode === "light" ? "white" : "blue.200",
+                color: props.colorMode === "light" ? "#2b6cb0" : "#1a202c",
+
+            },
+            "a#c-icon:hover": {
+                color: props.colorMode === "light" ? "#363737" : "white",
+                textDecoration: "none",
+                "&:hover": {
+                    color: props.theme.colors.blue[ "300" ],
+                },
             },
         }),
     },

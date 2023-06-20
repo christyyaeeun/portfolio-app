@@ -19,9 +19,11 @@ import { Contact } from "../models";
 import { fetchByPath, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
 import { Input, Textarea, FormLabel, Text, } from "@chakra-ui/react";
+
 export default function ContactCreateForm(props) {
   const textMode = useColorModeValue('#2c2c2c', 'white')
   const btnBg = useColorModeValue('blue.300', 'blue.200')
+  const inputColor = useColorModeValue("black", "white");
 
   const {
     clearOnSuccess = true,
@@ -132,9 +134,9 @@ export default function ContactCreateForm(props) {
       { ...getOverrideProps(overrides, "ContactCreateForm") }
       { ...rest }
     >
-      <FormLabel color={ textMode } mb="-1em" fontSize="lg">Full Name</FormLabel>
+      <FormLabel mb="-1em" fontSize="lg">Full Name</FormLabel>
       <TextField
-        color={ textMode }
+        color={ inputColor }
         isRequired={ false }
         isReadOnly={ false }
         placeholder="First and last name"
@@ -270,11 +272,10 @@ export default function ContactCreateForm(props) {
           { ...getOverrideProps(overrides, "RightAlignCTASubFlex") }
         >
           <Button
-            bg={ btnBg }
+            variant="outline"
             className="submit-btn"
             children="Submit"
             type="submit"
-            variation="primary"
             isDisabled={ Object.values(errors).some((e) => e?.hasError) }
             { ...getOverrideProps(overrides, "SubmitButton") }
           ></Button>

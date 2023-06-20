@@ -10,8 +10,8 @@ import {
 } from '@chakra-ui/react';
 
 export default function Footer() {
-    const footerBg = useColorModeValue("blue.200", "dark.100")
-    const textMode = useColorModeValue("#2C2C2C", "#ffffff")
+    const footerBg = useColorModeValue("blue.100", "dark.100")
+    const textMode = useColorModeValue("colorMode.light", "colorMode.dark")
     return (
         <>
             <div className="footer">
@@ -37,7 +37,7 @@ export default function Footer() {
                         spacing={ 4 }
                         justify={ { base: 'center', md: 'space-between' } }
                         align={ { base: 'center', md: 'center' } }>
-                        <Stack className="footer-link" color={textMode} px={ { base: "1em" } } fontWeight="700" direction={ 'row' } spacing={ { base: "3", md: "6" } }>
+                        <Stack className="footer-link" color={ textMode } px={ { base: "1em" } } fontWeight="700" direction={ 'row' } spacing={ { base: "3", md: "6" } }>
                             <Link className="flink" href={ '/home' }>Home</Link>
                             <Link className="flink" href={ '/about' }>About</Link>
                             <Link className="flink" href={ '/portfolio' }>Portfolio</Link>

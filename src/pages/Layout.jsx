@@ -12,11 +12,10 @@ const Layout = () => {
                 animate={ { opacity: 1 } }
                 exit={ { opacity: 0 } }
             >
-              
                 <main className="App">
                     <Navbar />
                     <Outlet />
-                        <Footer />
+                    <Footer />
                 </main>
             </motion.div>
         </>

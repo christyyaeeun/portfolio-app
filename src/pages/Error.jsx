@@ -4,7 +4,6 @@ import React from 'react'
 import {
     Container,
     Stack,
-    Flex,
     Box,
     Heading,
     Text,
@@ -55,7 +54,7 @@ export default function Error() {
                         </Text>
                 
                             <Button
-                                as="a" href="/home"
+                                as="a" href="/"
                                 w='10em' h={ 10 }
                                 leftIcon={ <BsArrowLeft /> }
                                 rounded={ 'md' }

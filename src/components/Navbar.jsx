@@ -61,7 +61,7 @@ export default function Navbar() {
                         direction={ 'row' }
                         spacing={ 6 }>
                         <Box px="2">
-                            <Link id="c-icon" to="/home" _hover={ { color: '#B2C7C6' } } color={ useColorModeValue('#363737', 'white') }>
+                            <Link id="c-icon" to="/" color={ useColorModeValue('#363737', 'white') }>
                                 <LogoIcon w={ { base: "2em", lg: "2.2em" } } h={ { base: "2em", lg: "2.2em" } } />
                             </Link>
                         </Box>
@@ -76,7 +76,8 @@ export default function Navbar() {
                             ml={ { base: -2 } }
                             display={ { base: 'flex', md: 'none', lg: 'none' } }>
 
-                            <IconButton ref={ btnRef }
+                            <IconButton 
+                            ref={ btnRef }
                                 isOpen={ isOpen }
                                 onClick={ onOpen }
                                 icon={
@@ -119,6 +120,7 @@ export default function Navbar() {
                                 <Flex
                                     className="nav-link"
                                     // color={ textColor }
+                                    alignItems="flex-start"
                                     style={ { "--text-color": textMode, "--highlight-color": "#0461cf7d" } }
                                     fontSize="large"
                                     fontWeight="700"

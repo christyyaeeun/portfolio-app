@@ -43,7 +43,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         { topic }
                         <h4>{ tag }</h4>
                     </Text>
-
                     <img src={ imgURL } className="img-responsive" alt={ name } />{ ' ' }
                 </Box>
             </Center>
