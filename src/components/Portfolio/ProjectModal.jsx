@@ -22,7 +22,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         return null;
     }
 
-    const { name, description, roles, tools, about, imgURL, tags, gifURL, figmaURL } = project;
+    const { name, description, roles, about, imgURL, tags, gifURL, figmaURL } = project;
 
     return (
         <Drawer isOpen={ isOpen } onClose={ onClose } size={ { base: 'sm', md: 'md', lg: 'lg' } }>
@@ -40,7 +40,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     <Heading>{ name }</Heading>
                     <Text className="project-text">{ description }</Text>
                     <Text className="project-subtitle" id="pb">
-                        Technologies
+                        Tools & Technologies
                     </Text>
                     <SkillTags tags={ tags } marginTop="1em" />
                     <Stack direction={ { base: 'column', md: 'row' } } spacing="6" mb="1em">
@@ -48,15 +48,15 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                             <Text className="project-subtitle">Roles & Responsibilities</Text>
                             <Text>{ roles }</Text>
                         </Box>
-                        <Box>
+                        {/* <Box>
                             <Text className="project-subtitle">Tools</Text>
                             <Text>{ tools }</Text>
-                        </Box>
+                        </Box> */}
                     </Stack>
                     <Text className="project-subtitle">About</Text>
                     <Text className="project-text">{ about }</Text>
                     <Box mb="1em">
-                {gifURL &&   <VideoPlayer gifURL={ gifURL } /> }
+                        { gifURL && <VideoPlayer gifURL={ gifURL } /> }
                     </Box>
                     { imgURL && (
                         <a href={ imgURL } target="_blank" rel="noreferrer">

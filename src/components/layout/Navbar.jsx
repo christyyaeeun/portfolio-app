@@ -76,8 +76,8 @@ export default function Navbar() {
                             ml={ { base: -2 } }
                             display={ { base: 'flex', md: 'none', lg: 'none' } }>
 
-                            <IconButton 
-                            ref={ btnRef }
+                            <IconButton
+                                ref={ btnRef }
                                 isOpen={ isOpen }
                                 onClick={ onOpen }
                                 icon={

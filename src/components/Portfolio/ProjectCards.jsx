@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react'
 import { Box, Container, Heading, SimpleGrid, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { motion } from 'framer-motion'
-import projects from '../../data/projects.json'
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
+import data from '../../data/data.json';
 
 const ProjectCards = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,7 +33,7 @@ const ProjectCards = () => {
                         exit={ { opacity: 0 } }
                     >
                         <SimpleGrid columns={ [ 1, null, 2 ] } minChildWidth="350px" maxW="3xl" margin="0 auto" justifyContent="center" justifyItems={ { lg: "center" } }>
-                            { projects.map((project, index) => (
+                            { data.Projects.map((project, index) => (
                                 <ProjectCard
                                     key={ index }
                                     name={ project.name }

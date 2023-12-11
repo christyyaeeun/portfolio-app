@@ -1,17 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import ProjectCards from '../components/Portfolio/ProjectCards'
+import ProjectCards from '../components/portfolio/ProjectCards'
 import { Box } from '@chakra-ui/react'
+import {motionProps} from '../utils/motionProps'
 
 const Portfolio = () => {
     return (
         <>
-            <motion.div
-                transition={ { duration: 1, delay: .2 } }
-                initial={ { opacity: 0 } }
-                animate={ { opacity: 1 } }
-                exit={ { opacity: 0 } }
-            >
+            <motion.div { ...motionProps }>
                 <Box className="portfolio-container" pt={{base:"3em", md:"4em", lg:"5em"}} pb="5em">
                     <ProjectCards />
                 </Box>

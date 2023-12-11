@@ -18,32 +18,23 @@ const theme = extendTheme({
             dark: "#ffffff",
         },
     },
-    textStyles: {
-        light: {
-            color: "#2C2C2C",
-        },
-        dark: {
-            color: "#ffffff",
-        },
-    },
     styles: {
         global: (props) => ({
             ".amplify-input": {
-                color: props.colorMode === "light" ? "#2c2c2c" : "#ffffff",
+                color: props.colorMode === "light" ? theme.colors.textMode.light : theme.colors.textMode.dark,
             },
             ".nav-link .link": {
-                color: props.colorMode === "light" ? "#2c313d" : "#ffffff",
+                color: props.colorMode === "light" ? theme.colors.dark[ 200 ] : theme.colors.textMode.dark,
             },
             ".submit-btn": {
-                bg: props.colorMode === "light" ? "white" : "blue.200",
+                bg: props.colorMode === "light" ? "white" : theme.colors.blue[ 200 ],
                 color: props.colorMode === "light" ? "#2b6cb0" : "#1a202c",
-
             },
             "a#c-icon:hover": {
                 color: props.colorMode === "light" ? "#363737" : "white",
                 textDecoration: "none",
                 "&:hover": {
-                    color: props.theme.colors.blue[ "300" ],
+                    color: theme.colors.blue[ 300 ],
                 },
             },
         }),

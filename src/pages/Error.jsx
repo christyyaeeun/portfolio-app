@@ -45,7 +45,6 @@ export default function Error() {
                             <Box>
                                 <Box>
                                     <Heading className="error-text" fontSize={ { base: "8em", md: "9em", lg: "10em" } }>4</Heading>
-                                    {/* <Heading fontSize="10em">4</Heading> */}
                                 </Box>
                             </Box>
                         </HStack>
