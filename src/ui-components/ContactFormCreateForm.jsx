@@ -6,18 +6,12 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  TextAreaField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Contact } from "../models";
+import { ContactForm } from "../models";
 import { fetchByPath, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
-export default function ContactCreateForm(props) {
+export default function ContactFormCreateForm(props) {
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -30,25 +24,25 @@ export default function ContactCreateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    phone: "",
+    number: "",
     email: "",
     message: "",
   };
   const [name, setName] = React.useState(initialValues.name);
-  const [phone, setPhone] = React.useState(initialValues.phone);
+  const [number, setNumber] = React.useState(initialValues.number);
   const [email, setEmail] = React.useState(initialValues.email);
   const [message, setMessage] = React.useState(initialValues.message);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
-    setPhone(initialValues.phone);
+    setNumber(initialValues.number);
     setEmail(initialValues.email);
     setMessage(initialValues.message);
     setErrors({});
   };
   const validations = {
-    name: [],
-    phone: [{ type: "Phone" }],
+    name: [{ type: "Required" }],
+    number: [{ type: "Required" }, { type: "Phone" }],
     email: [{ type: "Required" }, { type: "Email" }],
     message: [{ type: "Required" }],
   };
@@ -79,7 +73,7 @@ export default function ContactCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           name,
-          phone,
+          number,
           email,
           message,
         };
@@ -111,7 +105,7 @@ export default function ContactCreateForm(props) {
               modelFields[key] = undefined;
             }
           });
-          await DataStore.save(new Contact(modelFields));
+          await DataStore.save(new ContactForm(modelFields));
           if (onSuccess) {
             onSuccess(modelFields);
           }
@@ -124,21 +118,20 @@ export default function ContactCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ContactCreateForm")}
+      {...getOverrideProps(overrides, "ContactFormCreateForm")}
       {...rest}
     >
       <TextField
         label="Name"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
-        placeholder="Full Name"
         value={name}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name: value,
-              phone,
+              number,
               email,
               message,
             };
@@ -156,46 +149,44 @@ export default function ContactCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Phone"
-        isRequired={false}
+        label="Number"
+        isRequired={true}
         isReadOnly={false}
-        placeholder="111-111-1111"
         type="tel"
-        value={phone}
+        value={number}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              phone: value,
+              number: value,
               email,
               message,
             };
             const result = onChange(modelFields);
-            value = result?.phone ?? value;
+            value = result?.number ?? value;
           }
-          if (errors.phone?.hasError) {
-            runValidationTasks("phone", value);
+          if (errors.number?.hasError) {
+            runValidationTasks("number", value);
           }
-          setPhone(value);
+          setNumber(value);
         }}
-        onBlur={() => runValidationTasks("phone", phone)}
-        errorMessage={errors.phone?.errorMessage}
-        hasError={errors.phone?.hasError}
-        {...getOverrideProps(overrides, "phone")}
+        onBlur={() => runValidationTasks("number", number)}
+        errorMessage={errors.number?.errorMessage}
+        hasError={errors.number?.hasError}
+        {...getOverrideProps(overrides, "number")}
       ></TextField>
       <TextField
         label="Email"
         isRequired={true}
         isReadOnly={false}
-        placeholder="Enter email"
         value={email}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              phone,
+              number,
               email: value,
               message,
             };
@@ -212,17 +203,17 @@ export default function ContactCreateForm(props) {
         hasError={errors.email?.hasError}
         {...getOverrideProps(overrides, "email")}
       ></TextField>
-      <TextAreaField
+      <TextField
         label="Message"
         isRequired={true}
         isReadOnly={false}
-        placeholder="Enter message"
+        value={message}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
               name,
-              phone,
+              number,
               email,
               message: value,
             };
@@ -238,7 +229,7 @@ export default function ContactCreateForm(props) {
         errorMessage={errors.message?.errorMessage}
         hasError={errors.message?.hasError}
         {...getOverrideProps(overrides, "message")}
-      ></TextAreaField>
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

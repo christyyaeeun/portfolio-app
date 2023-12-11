@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Contact": {
-            "name": "Contact",
+        "ContactForm": {
+            "name": "ContactForm",
             "fields": {
                 "id": {
                     "name": "id",
@@ -14,14 +14,14 @@ export const schema = {
                     "name": "name",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
-                "phone": {
-                    "name": "phone",
+                "number": {
+                    "name": "number",
                     "isArray": false,
                     "type": "AWSPhone",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "email": {
@@ -56,7 +56,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Contacts",
+            "pluralName": "ContactForms",
             "attributes": [
                 {
                     "type": "model",
@@ -83,6 +83,6 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "codegenVersion": "3.3.6",
-    "version": "17916ec65528e68ef9a8e07d144635df"
+    "codegenVersion": "3.4.4",
+    "version": "4129c226e8a63bb1a986f229e631482a"
 };

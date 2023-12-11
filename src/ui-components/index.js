@@ -5,5 +5,5 @@
  **************************************************************************/
 
 export { default as studioTheme } from "./studioTheme";
-export { default as ContactCreateForm } from "./ContactCreateForm";
-export { default as ContactUpdateForm } from "./ContactUpdateForm";
+export { default as ContactFormCreateForm } from "./ContactFormCreateForm";
+export { default as ContactFormUpdateForm } from "./ContactFormUpdateForm";

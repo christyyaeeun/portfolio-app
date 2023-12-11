@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/cli": "^10.8.1",
-    "@aws-amplify/ui-react": "^4.4.0",
+    "@aws-amplify/ui-react": "^4.6.5",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
