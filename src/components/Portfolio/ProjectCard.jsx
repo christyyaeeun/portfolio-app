@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     imgURL,
     onClick,
 }) => {
-    
+
     return (
         <div className="portfolio-item" onClick={ onClick }>
             <Center p={ 6 }>

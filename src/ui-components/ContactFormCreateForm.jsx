@@ -6,10 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  Button,
+  Flex,
+  Grid,
+  TextAreaField,
+  TextField,
+} from "@aws-amplify/ui-react";
 import { ContactForm } from "../models";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify";
 export default function ContactFormCreateForm(props) {
   const {
@@ -101,8 +106,8 @@ export default function ContactFormCreateForm(props) {
         }
         try {
           Object.entries(modelFields).forEach(([key, value]) => {
-            if (typeof value === "string" && value.trim() === "") {
-              modelFields[key] = undefined;
+            if (typeof value === "string" && value === "") {
+              modelFields[key] = null;
             }
           });
           await DataStore.save(new ContactForm(modelFields));
@@ -125,6 +130,7 @@ export default function ContactFormCreateForm(props) {
         label="Name"
         isRequired={true}
         isReadOnly={false}
+        placeholder="Enter Full Name"
         value={name}
         onChange={(e) => {
           let { value } = e.target;
@@ -149,9 +155,10 @@ export default function ContactFormCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Number"
+        label="Phone"
         isRequired={true}
         isReadOnly={false}
+        placeholder="Enter Phone Number"
         type="tel"
         value={number}
         onChange={(e) => {
@@ -180,6 +187,7 @@ export default function ContactFormCreateForm(props) {
         label="Email"
         isRequired={true}
         isReadOnly={false}
+        placeholder="Enter Email"
         value={email}
         onChange={(e) => {
           let { value } = e.target;
@@ -203,11 +211,11 @@ export default function ContactFormCreateForm(props) {
         hasError={errors.email?.hasError}
         {...getOverrideProps(overrides, "email")}
       ></TextField>
-      <TextField
+      <TextAreaField
         label="Message"
         isRequired={true}
         isReadOnly={false}
-        value={message}
+        placeholder="Write your message"
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -229,7 +237,7 @@ export default function ContactFormCreateForm(props) {
         errorMessage={errors.message?.errorMessage}
         hasError={errors.message?.hasError}
         {...getOverrideProps(overrides, "message")}
-      ></TextField>
+      ></TextAreaField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

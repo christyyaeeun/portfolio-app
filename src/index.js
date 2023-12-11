@@ -3,11 +3,11 @@ import React, { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import * as ReactDOM from 'react-dom/client';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './serviceWorker';
-import '@aws-amplify/ui-react/styles.css';
-import awsconfig from './aws-exports';
+// import reportWebVitals from './reportWebVitals';
+// import * as serviceWorker from './serviceWorker';
 import { Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
+import "@aws-amplify/ui-react/styles.css";
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -22,5 +22,5 @@ root.render(
 );
 
 Amplify.configure(awsconfig);
-serviceWorker.unregister();
-reportWebVitals();
+// serviceWorker.unregister();
+// reportWebVitals();
