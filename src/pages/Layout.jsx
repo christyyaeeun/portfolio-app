@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Layout/Navbar';
+import { Navbar } from '../components/Layout/Navbar';
 import Footer from '../components/Layout/Footer';
 import { motion } from 'framer-motion';
 
@@ -13,7 +13,7 @@ const Layout = () => {
                 exit={ { opacity: 0 } }
             >
                 <main className="App">
-                    {/* <Navi /> */}
+                    {/* <Navi /> */ }
                     <Navbar />
                     <Outlet />
                     <Footer />

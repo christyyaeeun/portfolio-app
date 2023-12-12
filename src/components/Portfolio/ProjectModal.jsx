@@ -34,7 +34,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             <DrawerContent className="modal-content" backgroundColor={ theme.colors.drawerBg[ colorMode ] }>
                 <DrawerHeader>
                     <Box display="flex" alignItems="center" color="white">
-                        <IconButton onClick={ onClose } icon={ <BsArrowLeftCircle /> } fontSize="30px" variant="ghost" />
+                        <IconButton onClick={ onClose } icon={ <BsArrowLeftCircle /> } fontSize="30px" variant="ghost" color="white" />
                         <Box p="2">
                             <Heading size="md">Back to projects</Heading>
                         </Box>

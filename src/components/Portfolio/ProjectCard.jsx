@@ -38,11 +38,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     rounded="md"
                     overflow="hidden"
                 >
-                    <Text className="hover-text">
+                    <div className="hover-text">
                         <Heading>{ name }</Heading>
                         { topic }
                         <h4>{ tag }</h4>
-                    </Text>
+                    </div>
                     <img src={ imgURL } className="img-responsive" alt={ name } />{ ' ' }
                 </Box>
             </Center>
