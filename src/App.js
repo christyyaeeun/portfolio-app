@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { ChakraProvider, Spinner, Center } from '@chakra-ui/react';
-
 import { Routes, Route } from 'react-router-dom';
 // import { Home, About, Contact, Portfolio, Layout, Error } from './pages'
 import theme from "./utils/theme";

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Text, Container, Flex, Box, useColorModeValue } from '@chakra-ui/react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import ProjectCards from "../components/Portfolio/ProjectCards";
+import PortfolioComponent from "../components/Portfolio/PortfolioComponent";
 import TextAnimation from "../components/Home/TextAnimation";
 import data from "../data/data.json";
 import ContactComponent from "../components/Contact/ContactComponent";
@@ -84,7 +84,7 @@ function Home() {
             <Section>
                 <div ref={ elementRef } style={ { paddingTop: "2em" } }>
                     <Box pt={ { base: "2em", md: "3em", lg: "4em" } } bg={ modeBg }>
-                        <ProjectCards />
+                        <PortfolioComponent />
                     </Box>
                 </div>
             </Section>

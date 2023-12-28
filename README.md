@@ -1,4 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personal Portfolio Website
+
+This is my personal portfolio website, showcasing my skills and projects. The website is built using React, TypeScript, and Chakra UI. Below, you'll find an overview of the project, its features, and how to set it up locally.
+
+## Project Overview
+
+### Technologies Used
+
+- **React:** A JavaScript library for building user interfaces.
+- **TypeScript:** A statically typed superset of JavaScript, enhancing code quality and developer productivity.
+- **Chakra UI:** A simple and modular component library for React applications.
+
+### Props and Interfaces
+
+The use of TypeScript and interfaces for prop types enhances code readability and helps catch potential errors during development. This practice ensures a robust and scalable codebase as the project grows.
+
+### Reuse of Components
+
+Components like ProjectCard and ProjectModal are intentionally designed for reuse. This design choice allows for easy addition of new projects or modifications to existing ones without affecting other parts of the application. This contributes to a more maintainable and extensible codebase.
+
+### Data Separation
+
+Project data is centrally stored in a JSON file (data.json), providing a clear separation between data and components. This approach simplifies the process of updating and expanding the list of projects without the need to modify the React components directly. This separation of concerns is crucial for scalability and ease of maintenance.
+
+### Project Structure
+
+The project follows a modular structure, with separate pages and components for different sections. Key files include:
+
+- **App.js:** The main entry point of the application, where routes are defined and ChakraProvider is used to apply the Chakra UI theme.
+
+- **Pages (Lazy Loaded):**
+  - Home
+  - About
+  - Contact
+  - Portfolio
+  - Layout
+  - Error
+
+### Features
+
+- **Lazy Loading:** The application utilizes lazy loading for improved performance by loading components only when they are needed.
+
+- **Chakra UI Theming:** The UI is styled using Chakra UI, providing a consistent and responsive design.
+
+- **Routing:** React Router is used for managing navigation between different pages.
+
+- **Loading Spinner:** A loading spinner is displayed during the initial loading of the application.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm should be installed on your machine.
 
 ## Available Scripts
 
@@ -66,3 +118,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
