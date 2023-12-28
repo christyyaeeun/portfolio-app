@@ -52,6 +52,16 @@ The project follows a modular structure, with separate pages and components for 
 
 - Node.js and npm should be installed on your machine.
 
+### AWS Amplify Configuration
+
+Before running the application, you need to configure AWS Amplify with your own AWS credentials. Follow these steps:
+
+1. Open the `src/aws-exports.js` file.
+2. Replace the placeholder values in this file with your own AWS Amplify configuration.
+3. Save the changes.
+
+Now, you should be ready to run the application with your own AWS Amplify setup.
+
 ## Available Scripts
 
 In the project directory, you can run:
